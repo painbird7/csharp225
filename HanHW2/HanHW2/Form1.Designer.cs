@@ -70,7 +70,7 @@
             this.permitGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.permitGroupBox.Name = "permitGroupBox";
             this.permitGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.permitGroupBox.Size = new System.Drawing.Size(342, 215);
+            this.permitGroupBox.Size = new System.Drawing.Size(342, 247);
             this.permitGroupBox.TabIndex = 0;
             this.permitGroupBox.TabStop = false;
             this.permitGroupBox.Text = "Permits Sold";
@@ -163,18 +163,18 @@
             this.revenueGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.revenueGroupBox.Name = "revenueGroupBox";
             this.revenueGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.revenueGroupBox.Size = new System.Drawing.Size(487, 215);
+            this.revenueGroupBox.Size = new System.Drawing.Size(469, 247);
             this.revenueGroupBox.TabIndex = 1;
             this.revenueGroupBox.TabStop = false;
             this.revenueGroupBox.Text = "Revenue Generated";
             // 
             // trTotalTextBox
             // 
-            this.trTotalTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trTotalTextBox.Location = new System.Drawing.Point(340, 162);
+            this.trTotalTextBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trTotalTextBox.Location = new System.Drawing.Point(120, 192);
             this.trTotalTextBox.Name = "trTotalTextBox";
             this.trTotalTextBox.ReadOnly = true;
-            this.trTotalTextBox.Size = new System.Drawing.Size(115, 25);
+            this.trTotalTextBox.Size = new System.Drawing.Size(335, 27);
             this.trTotalTextBox.TabIndex = 15;
             this.trTotalTextBox.TabStop = false;
             // 
@@ -186,6 +186,7 @@
             this.scTotalTextBox.ReadOnly = true;
             this.scTotalTextBox.Size = new System.Drawing.Size(115, 25);
             this.scTotalTextBox.TabIndex = 14;
+            this.scTotalTextBox.TabStop = false;
             // 
             // ecTotalTextBox
             // 
@@ -195,6 +196,7 @@
             this.ecTotalTextBox.ReadOnly = true;
             this.ecTotalTextBox.Size = new System.Drawing.Size(115, 25);
             this.ecTotalTextBox.TabIndex = 13;
+            this.ecTotalTextBox.TabStop = false;
             // 
             // wcTotalTextBox
             // 
@@ -204,14 +206,16 @@
             this.wcTotalTextBox.ReadOnly = true;
             this.wcTotalTextBox.Size = new System.Drawing.Size(115, 25);
             this.wcTotalTextBox.TabIndex = 12;
+            this.wcTotalTextBox.TabStop = false;
             // 
             // revenueTRTextbox
             // 
             this.revenueTRTextbox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.revenueTRTextbox.Location = new System.Drawing.Point(120, 162);
+            this.revenueTRTextbox.Multiline = true;
             this.revenueTRTextbox.Name = "revenueTRTextbox";
             this.revenueTRTextbox.ReadOnly = true;
-            this.revenueTRTextbox.Size = new System.Drawing.Size(214, 25);
+            this.revenueTRTextbox.Size = new System.Drawing.Size(335, 24);
             this.revenueTRTextbox.TabIndex = 11;
             this.revenueTRTextbox.TabStop = false;
             // 
@@ -223,6 +227,7 @@
             this.revenueSCTextBox.ReadOnly = true;
             this.revenueSCTextBox.Size = new System.Drawing.Size(214, 25);
             this.revenueSCTextBox.TabIndex = 10;
+            this.revenueSCTextBox.TabStop = false;
             // 
             // revenueECTextBox
             // 
@@ -232,6 +237,7 @@
             this.revenueECTextBox.ReadOnly = true;
             this.revenueECTextBox.Size = new System.Drawing.Size(214, 25);
             this.revenueECTextBox.TabIndex = 9;
+            this.revenueECTextBox.TabStop = false;
             // 
             // revenueWCTextBox
             // 
@@ -241,12 +247,13 @@
             this.revenueWCTextBox.ReadOnly = true;
             this.revenueWCTextBox.Size = new System.Drawing.Size(214, 25);
             this.revenueWCTextBox.TabIndex = 8;
+            this.revenueWCTextBox.TabStop = false;
             // 
             // revenueTRLabel
             // 
             this.revenueTRLabel.AutoSize = true;
             this.revenueTRLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.revenueTRLabel.Location = new System.Drawing.Point(8, 164);
+            this.revenueTRLabel.Location = new System.Drawing.Point(8, 165);
             this.revenueTRLabel.Name = "revenueTRLabel";
             this.revenueTRLabel.Size = new System.Drawing.Size(93, 17);
             this.revenueTRLabel.TabIndex = 7;
@@ -288,33 +295,33 @@
             // calculateButton
             // 
             this.calculateButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculateButton.Location = new System.Drawing.Point(176, 256);
+            this.calculateButton.Location = new System.Drawing.Point(176, 285);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(98, 52);
             this.calculateButton.TabIndex = 4;
-            this.calculateButton.Text = "Calculate Revenue";
+            this.calculateButton.Text = "&Calculate Revenue";
             this.calculateButton.UseVisualStyleBackColor = true;
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // clearButton
             // 
             this.clearButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(375, 256);
+            this.clearButton.Location = new System.Drawing.Point(375, 285);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(98, 52);
             this.clearButton.TabIndex = 5;
-            this.clearButton.Text = "Clear";
+            this.clearButton.Text = "Clea&r";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(574, 256);
+            this.exitButton.Location = new System.Drawing.Point(574, 285);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(98, 52);
             this.exitButton.TabIndex = 6;
-            this.exitButton.Text = "Exit";
+            this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
@@ -322,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 332);
+            this.ClientSize = new System.Drawing.Size(857, 349);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.calculateButton);

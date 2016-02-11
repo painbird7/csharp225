@@ -74,38 +74,36 @@ namespace HanHW2
             try
             {
                 // Constant variables for ticket prices
-                const int wcPrice = 140;
-                const int ecPrice = 118;
-                const int scPrice = 118;
-
+                const decimal wcPrice = 140, ecPrice = 118, scPrice = 118;
+                
                 // West commuter. Define the variable for input and convert to int for caculation
                 // "C" is used to format string for currency
-                int wcValue = int.Parse(permitWCTextBox.Text);
-                int wcResult = wcPrice * wcValue;
+                decimal wcValue = decimal.Parse(permitWCTextBox.Text);
+                decimal wcResult = wcPrice * wcValue;
                 wcTotalTextBox.Text = wcResult.ToString("C");
                 revenueWCTextBox.Text = "$" + wcPrice + " x " + permitWCTextBox.Text;
 
                 // East commuter
-                int ecValue = int.Parse(permitECTextBox.Text);
-                int ecResult = ecPrice * ecValue;
+                decimal ecValue = decimal.Parse(permitECTextBox.Text);
+                decimal ecResult = ecPrice * ecValue;
                 ecTotalTextBox.Text = ecResult.ToString("C");
                 revenueECTextBox.Text = "$" + ecPrice + " x " + permitECTextBox.Text;
 
                 // South commuter
-                int scValue = int.Parse(permitSCTextBox.Text);
-                int scResult = scPrice * scValue;
+                decimal scValue = decimal.Parse(permitSCTextBox.Text);
+                decimal scResult = scPrice * scValue;
                 scTotalTextBox.Text = scResult.ToString("C");
                 revenueSCTextBox.Text = "$" + scPrice + " x " + permitSCTextBox.Text;
 
                 // Total revenue
-                int totalRevenueValue = wcResult + ecResult + scResult;
-                revenueTRTextbox.Text = wcResult + " + " + ecResult + " + " + scResult;
-                trTotalTextBox.Text = totalRevenueValue.ToString("C");
+                decimal totalRevenueValue = wcResult + ecResult + scResult;
+                revenueTRTextbox.Text = wcResult.ToString("C") + " + " + ecResult.ToString("C") + " + " + scResult.ToString("C");
+                trTotalTextBox.Text = "= " + totalRevenueValue.ToString("C");
             }
             catch
             {
                 // Display message box to inform the user regarding input data type error and clear text boxes
-                MessageBox.Show("Invalid data was entered. Input should be integer.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Invalid data was entered. Input should be numeric values.", "Invalid entry", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 clearTextBox();
             }
         }
