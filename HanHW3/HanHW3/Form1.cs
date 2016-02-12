@@ -21,32 +21,83 @@ namespace HanHW3
         {
             InitializeComponent();
         }
-        const int austinFee = 150, chicagoFee = 225, dallasFee = 174, orlandoFee = 300, phoenixFee = 175, raleighFee = 150;
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
-            Dictionary<string, int> workshopDaysDict = new Dictionary<string, int>();
-            workshopDaysDict.Add("Handling Stress", 3);
-            workshopDaysDict.Add("Time Management", 3);
-            workshopDaysDict.Add("Supervision Skills", 3);
-            workshopDaysDict.Add("Negotiation", 5);
-            workshopDaysDict.Add("How to Interview", 1);
+            this.Close();
+        }
 
-            Dictionary<string, int> workshopCostDict = new Dictionary<string, int>();
-            workshopCostDict.Add("Handling Stress", 1000);
-            workshopCostDict.Add("Time Management", 800);
-            workshopCostDict.Add("Supervision Skills", 1500);
-            workshopCostDict.Add("Negotiation", 1300);
-            workshopCostDict.Add("How to Interview", 500);
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            registrationTextBox.Text = string.Empty;
+            lodgingTextBox.Text = string.Empty;
+            totalCostTextBox.Text = string.Empty;
+            workshopListBox.ClearSelected();
+            lodgingListBox.ClearSelected();
 
-            Dictionary<string, int> lodgingDict = new Dictionary<string, int>();
-            lodgingDict.Add("Austin", 150);
-            lodgingDict.Add("Chicago", 225);
-            lodgingDict.Add("Dallas", 174);
-            lodgingDict.Add("Orlando", 300);
-            lodgingDict.Add("Phoenix", 175);
-            lodgingDict.Add("Raleigh", 150);
+        }
+
+        private void calculateButton_Click(object sender, EventArgs e)
+        {
+
+            if (workshopListBox.SelectedIndex != -1)
+            {
+                string workshopType = workshopListBox.SelectedItem.ToString();
+
+                switch (workshopType)
+                {
+                    case "Handling Stress":
+                        registrationTextBox.Text = int.Parse("1000").ToString("C");
+                        break;
+                    case "Time Management":
+                        registrationTextBox.Text = int.Parse("800").ToString("C");
+                        break;
+                    case "Supervision Skills":
+                        registrationTextBox.Text = int.Parse("1500").ToString("C");
+                        break;
+                    case "Negotiation":
+                        registrationTextBox.Text = int.Parse("1300").ToString("C");
+                        break;
+                    case "How to Interview":
+                        registrationTextBox.Text = int.Parse("500").ToString("C");
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a workshop.");
+            }
+
+            if (lodgingListBox.SelectedIndex != -1)
+            {
+                string lodgingType = lodgingListBox.SelectedItem.ToString();
+
+                switch (lodgingType)
+                {
+                    case "Austin":
+                        lodgingTextBox.Text = int.Parse("150").ToString("C");
+                        break;
+                    case "Chicago":
+                        lodgingTextBox.Text = int.Parse("225").ToString("C");
+                        break;
+                    case "Dallas":
+                        lodgingTextBox.Text = int.Parse("174").ToString("C");
+                        break;
+                    case "Orlando":
+                        lodgingTextBox.Text = int.Parse("300").ToString("C");
+                        break;
+                    case "Phoenix":
+                        lodgingTextBox.Text = int.Parse("175").ToString("C");
+                        break;
+                    case "Raleigh":
+                        lodgingTextBox.Text = int.Parse("150").ToString("C");
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a lodging location.");
+            }
         }
     }
-    
 }
