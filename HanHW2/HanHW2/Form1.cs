@@ -77,34 +77,34 @@ namespace HanHW2
                 const decimal wcPrice = 140, ecPrice = 118, scPrice = 118;
                 
                 // West commuter. Define the variable for input and convert to int for caculation
-                // "C" is used to format string for currency
+                // "C0" is used to format string for currency
                 decimal wcValue = decimal.Parse(permitWCTextBox.Text);
                 decimal wcResult = wcPrice * wcValue;
-                wcTotalTextBox.Text = wcResult.ToString("C");
+                wcTotalTextBox.Text = wcResult.ToString("C0");
                 revenueWCTextBox.Text = "$" + wcPrice + " x " + permitWCTextBox.Text;
 
                 // East commuter
                 decimal ecValue = decimal.Parse(permitECTextBox.Text);
                 decimal ecResult = ecPrice * ecValue;
-                ecTotalTextBox.Text = ecResult.ToString("C");
+                ecTotalTextBox.Text = ecResult.ToString("C0");
                 revenueECTextBox.Text = "$" + ecPrice + " x " + permitECTextBox.Text;
 
                 // South commuter
                 decimal scValue = decimal.Parse(permitSCTextBox.Text);
                 decimal scResult = scPrice * scValue;
-                scTotalTextBox.Text = scResult.ToString("C");
+                scTotalTextBox.Text = scResult.ToString("C0");
                 revenueSCTextBox.Text = "$" + scPrice + " x " + permitSCTextBox.Text;
 
                 // Total revenue
                 decimal totalRevenueValue = wcResult + ecResult + scResult;
-                revenueTRTextbox.Text = wcResult.ToString("C") + " + " + ecResult.ToString("C") + " + " + scResult.ToString("C");
-                trTotalTextBox.Text = "= " + totalRevenueValue.ToString("C");
+                revenueTRTextbox.Text = wcResult.ToString("C0") + " + " + ecResult.ToString("C0") + " + " + scResult.ToString("C0");
+                trTotalTextBox.Text = "= " + totalRevenueValue.ToString("C0");
             }
             catch
             {
                 // Display message box to inform the user regarding input data type error and clear text boxes
-                MessageBox.Show("Invalid data was entered. Input should be numeric values.", "Invalid entry", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 clearTextBox();
+                MessageBox.Show("Invalid data was entered. Input should be numeric values.", "Invalid entry", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
