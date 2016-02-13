@@ -76,6 +76,7 @@ namespace HanHW3
                 int lodgingValue = lodgingDict[lodgingType];
                 int lodgingTotal = lodgingValue * lodgingDay;
 
+                // Display calculated values on textbox controls
                 registrationTextBox.Text = workshopValue.ToString("C0");
                 lodgingTextBox.Text = lodgingValue.ToString("C0") + " x " + lodgingDay.ToString() + " days = " + lodgingTotal.ToString("C0");
                 totalCostTextBox.Text = (workshopValue + lodgingTotal).ToString("C0");

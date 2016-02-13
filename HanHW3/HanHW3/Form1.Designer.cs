@@ -216,8 +216,8 @@
             this.calculateButton.Location = new System.Drawing.Point(96, 365);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(75, 23);
-            this.calculateButton.TabIndex = 7;
-            this.calculateButton.Text = "Calculate";
+            this.calculateButton.TabIndex = 3;
+            this.calculateButton.Text = "&Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
@@ -226,8 +226,8 @@
             this.clearButton.Location = new System.Drawing.Point(227, 365);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(75, 23);
-            this.clearButton.TabIndex = 8;
-            this.clearButton.Text = "Clear";
+            this.clearButton.TabIndex = 4;
+            this.clearButton.Text = "Clea&r";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
@@ -236,8 +236,8 @@
             this.exitButton.Location = new System.Drawing.Point(358, 365);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
-            this.exitButton.TabIndex = 9;
-            this.exitButton.Text = "Exit";
+            this.exitButton.TabIndex = 5;
+            this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
@@ -266,24 +266,30 @@
             // 
             this.totalCostTextBox.Location = new System.Drawing.Point(323, 140);
             this.totalCostTextBox.Name = "totalCostTextBox";
+            this.totalCostTextBox.ReadOnly = true;
             this.totalCostTextBox.Size = new System.Drawing.Size(186, 25);
             this.totalCostTextBox.TabIndex = 10;
+            this.totalCostTextBox.TabStop = false;
             // 
             // lodgingTextBox
             // 
             this.lodgingTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lodgingTextBox.Location = new System.Drawing.Point(323, 91);
             this.lodgingTextBox.Name = "lodgingTextBox";
+            this.lodgingTextBox.ReadOnly = true;
             this.lodgingTextBox.Size = new System.Drawing.Size(186, 23);
             this.lodgingTextBox.TabIndex = 9;
+            this.lodgingTextBox.TabStop = false;
             // 
             // registrationTextBox
             // 
             this.registrationTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.registrationTextBox.Location = new System.Drawing.Point(323, 43);
             this.registrationTextBox.Name = "registrationTextBox";
+            this.registrationTextBox.ReadOnly = true;
             this.registrationTextBox.Size = new System.Drawing.Size(186, 23);
             this.registrationTextBox.TabIndex = 8;
+            this.registrationTextBox.TabStop = false;
             // 
             // label14
             // 
@@ -330,7 +336,7 @@
             this.lodgingListBox.Location = new System.Drawing.Point(142, 66);
             this.lodgingListBox.Name = "lodgingListBox";
             this.lodgingListBox.Size = new System.Drawing.Size(54, 94);
-            this.lodgingListBox.TabIndex = 4;
+            this.lodgingListBox.TabIndex = 2;
             // 
             // workshopListBox
             // 
@@ -346,7 +352,7 @@
             this.workshopListBox.Location = new System.Drawing.Point(6, 66);
             this.workshopListBox.Name = "workshopListBox";
             this.workshopListBox.Size = new System.Drawing.Size(115, 79);
-            this.workshopListBox.TabIndex = 3;
+            this.workshopListBox.TabIndex = 1;
             // 
             // label11
             // 
