@@ -271,16 +271,18 @@
             // 
             // lodgingTextBox
             // 
+            this.lodgingTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lodgingTextBox.Location = new System.Drawing.Point(323, 91);
             this.lodgingTextBox.Name = "lodgingTextBox";
-            this.lodgingTextBox.Size = new System.Drawing.Size(186, 25);
+            this.lodgingTextBox.Size = new System.Drawing.Size(186, 23);
             this.lodgingTextBox.TabIndex = 9;
             // 
             // registrationTextBox
             // 
+            this.registrationTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.registrationTextBox.Location = new System.Drawing.Point(323, 43);
             this.registrationTextBox.Name = "registrationTextBox";
-            this.registrationTextBox.Size = new System.Drawing.Size(186, 25);
+            this.registrationTextBox.Size = new System.Drawing.Size(186, 23);
             this.registrationTextBox.TabIndex = 8;
             // 
             // label14
