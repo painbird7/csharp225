@@ -1,4 +1,4 @@
-﻿namespace HanHW4
+﻿namespace HanHW4_1
 {
     partial class Form1
     {

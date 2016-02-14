@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HanHW4
+namespace HanHW4_1
 {
     static class Program
     {

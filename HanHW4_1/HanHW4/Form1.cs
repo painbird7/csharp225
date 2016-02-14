@@ -17,7 +17,7 @@ using System.Windows.Forms;
     Date: 02/13/2016  
 */
 
-namespace HanHW4
+namespace HanHW4_1
 {
     public partial class Form1 : Form
     {
