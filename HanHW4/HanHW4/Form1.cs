@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-/*  Title: HanHW4 - Random Number Guessing Game
+/*  Title: HanHW4_1 - Random Number Guessing Game
     Requirement: Create an application that generates a random number in the range of 1 through 100 and asks the user to guess what the number is.  
     If the user's guess is higher than the random number, the program should display "Too high, try again." If the user's guess is lower than the random number, 
     the program should display "Too low, try again." If the user guesses the number, the application should congratulate the user and then generate a 
