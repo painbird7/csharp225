@@ -32,12 +32,14 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.parseButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.oneItemRadioButton = new System.Windows.Forms.RadioButton();
             this.nultipleItemsRadioButton = new System.Windows.Forms.RadioButton();
+            this.oneItemRadioButton = new System.Windows.Forms.RadioButton();
             this.openButton = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFile = new System.Windows.Forms.OpenFileDialog();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // clearButton
@@ -57,6 +59,7 @@
             this.exitButton.TabIndex = 1;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // parseButton
             // 
@@ -77,17 +80,6 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // oneItemRadioButton
-            // 
-            this.oneItemRadioButton.AutoSize = true;
-            this.oneItemRadioButton.Location = new System.Drawing.Point(29, 33);
-            this.oneItemRadioButton.Name = "oneItemRadioButton";
-            this.oneItemRadioButton.Size = new System.Drawing.Size(74, 19);
-            this.oneItemRadioButton.TabIndex = 0;
-            this.oneItemRadioButton.TabStop = true;
-            this.oneItemRadioButton.Text = "One item";
-            this.oneItemRadioButton.UseVisualStyleBackColor = true;
-            // 
             // nultipleItemsRadioButton
             // 
             this.nultipleItemsRadioButton.AutoSize = true;
@@ -99,6 +91,17 @@
             this.nultipleItemsRadioButton.Text = "Multiple items";
             this.nultipleItemsRadioButton.UseVisualStyleBackColor = true;
             // 
+            // oneItemRadioButton
+            // 
+            this.oneItemRadioButton.AutoSize = true;
+            this.oneItemRadioButton.Location = new System.Drawing.Point(29, 33);
+            this.oneItemRadioButton.Name = "oneItemRadioButton";
+            this.oneItemRadioButton.Size = new System.Drawing.Size(74, 19);
+            this.oneItemRadioButton.TabIndex = 0;
+            this.oneItemRadioButton.TabStop = true;
+            this.oneItemRadioButton.Text = "One item";
+            this.oneItemRadioButton.UseVisualStyleBackColor = true;
+            // 
             // openButton
             // 
             this.openButton.Location = new System.Drawing.Point(294, 65);
@@ -107,16 +110,26 @@
             this.openButton.TabIndex = 4;
             this.openButton.Text = "&Open";
             this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
-            // openFileDialog1
+            // openFile
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFile.FileName = "openFileDialog1";
+            // 
+            // dataGrid
+            // 
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Location = new System.Drawing.Point(54, 180);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.Size = new System.Drawing.Size(859, 225);
+            this.dataGrid.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(976, 595);
+            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.parseButton);
@@ -127,6 +140,7 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -140,8 +154,9 @@
         private System.Windows.Forms.RadioButton nultipleItemsRadioButton;
         private System.Windows.Forms.RadioButton oneItemRadioButton;
         private System.Windows.Forms.Button openButton;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFile;
+        private System.Windows.Forms.SaveFileDialog saveFile;
+        private System.Windows.Forms.DataGridView dataGrid;
     }
 }
 
