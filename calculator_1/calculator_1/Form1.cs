@@ -13,6 +13,14 @@ namespace calculator_1
     public partial class Form1 : Form
     {
         double salesKWTCFee;
+        double loyalty;
+        double initialCommission;
+        double salesLoyalty;
+        double cap;
+        double salesCap;
+        double salesPrice;
+        double lastCommission;
+
         public Form1()
         {
             InitializeComponent();
@@ -22,7 +30,7 @@ namespace calculator_1
         {
             this.Close();
         }
-        
+
         private void salesPriceTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -30,39 +38,39 @@ namespace calculator_1
                 // Check enter key press
                 if (e.KeyCode == Keys.Enter)
                 {
-                    
-                    double salesCommission = 0.03;
-                    double salesLoyalty = 0.06;
-                    
-                    double salesCap = 0.1;
+                    if ((capCheckBox.Checked) && (loyaltyCheckBox.Checked))
+                    {
+                        capAndloyaltyCheckedCase();
+                    }
+                    else if ((capCheckBox.Checked) && (!loyaltyCheckBox.Checked))
+                    {
+                        capCheckedNoLoyaltyCase();
+                    }
+                    else if ((!capCheckBox.Checked) && (loyaltyCheckBox.Checked))
+                    {
+                        loyaltyCheckedNoCapCase();
+                    }
+                    else if ((!capCheckBox.Checked) && (!loyaltyCheckBox.Checked))
+                    {
+                        noChecksCase();
+                    }
 
-                    double salesPrice = double.Parse(salesPriceTextBox.Text);
-                    double initialCommission = salesPrice * salesCommission;
-                    double middleCommission = initialCommission - salesKWTCFee;
-                    double loyalty = initialCommission * salesLoyalty;
-                    double finalCommission = middleCommission - loyalty;
-                    double cap = initialCommission * salesCap;
-                    double trueCommission = finalCommission - cap;
-
-                    commissionTextBox.Text = initialCommission.ToString("C");
-                    commissionLabel.Text = salesPrice + " x " + salesCommission + " =";
-                    middleCommisionTextBox.Text = middleCommission.ToString("C");
-                    middleCommissionLabel.Text = initialCommission + " - " + salesKWTCFee + " =";
-                    finalCommisionTextBox.Text = finalCommission.ToString("C");
-                    finalCommissionLabel.Text = initialCommission + " - " + salesKWTCFee + " - " + loyalty.ToString("C") + " =";
-                    loyaltyTextBox.Text = loyalty.ToString("C");
-                    loyaltyLabel.Text = initialCommission + " x " + salesLoyalty + " =";
-                    kwTcFeeTextBox.Text = salesKWTCFee.ToString("C");
-                    capTextBox.Text = cap.ToString("C");
-                    capLabel.Text = initialCommission + " x " + salesCap + " =";
-                    trueCommissionTextBox.Text = trueCommission.ToString("C");
-                    trueCommissionLabel.Text = initialCommission + " - " + salesKWTCFee + " - " + loyalty.ToString("C") + " - " + cap.ToString("C") + " =";
-                    
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                salesPriceTextBox.Text = string.Empty;
+                kwTcFeeTextBox.Text = string.Empty;
+                loyaltyLabel.Text = string.Empty;
+                loyaltyTextBox.Text = string.Empty;
+                capLabel.Text = string.Empty;
+                capTextBox.Text = string.Empty;
+                commissionLabel.Text = string.Empty;
+                commissionTextBox.Text = string.Empty;
+                lastCommissionTextBox.Text = string.Empty;
+                lastCommissionLabel.Text = string.Empty;
+                displayLabel.Text = string.Empty;
             }
         }
 
@@ -76,24 +84,116 @@ namespace calculator_1
             capTextBox.Text = string.Empty;
             commissionLabel.Text = string.Empty;
             commissionTextBox.Text = string.Empty;
-            middleCommisionTextBox.Text = string.Empty;
-            middleCommissionLabel.Text = string.Empty;
-            finalCommisionTextBox.Text = string.Empty;
-            finalCommissionLabel.Text = string.Empty;
-            trueCommissionLabel.Text = string.Empty;
-            trueCommissionTextBox.Text = string.Empty;
-            
+            lastCommissionTextBox.Text = string.Empty;
+            lastCommissionLabel.Text = string.Empty;
+            displayLabel.Text = string.Empty;
         }
 
-        private void capCheckBox_CheckedChanged(object sender, EventArgs e)
+
+        private void capCheckedNoLoyaltyCase()
         {
-            if (capCheckBox.Checked)
+            salesPrice = double.Parse(salesPriceTextBox.Text);
+            salesKWTCFee = 25;
+            kwTcFeeTextBox.Text = salesKWTCFee.ToString("C");
+            initialCommission = salesPrice * 0.03;
+            commissionTextBox.Text = initialCommission.ToString("C");
+            commissionLabel.Text = salesPrice + " x 3% =";
+            lastCommission = initialCommission - salesKWTCFee - loyalty;
+            lastCommissionTextBox.Text = lastCommission.ToString("C");
+            loyalty = initialCommission * 0.06;
+            lastCommissionLabel.Text = initialCommission.ToString("#.##") + " - " + salesKWTCFee + " - " + loyalty.ToString("#.##") + " =";
+            loyaltyTextBox.Text = loyalty.ToString("C");
+            loyaltyLabel.Text = initialCommission + " x " + "6% =";
+            displayLabel.Text = "Commission - KW TC Fee - Loyalty";
+        }
+
+        private void loyaltyCheckedNoCapCase()
+        {
+            salesPrice = double.Parse(salesPriceTextBox.Text);
+            initialCommission = salesPrice * 0.03;
+            commissionTextBox.Text = initialCommission.ToString("C");
+            commissionLabel.Text = salesPrice + " x 3% =";
+            capLabel.Text = initialCommission + " x 10% =";
+            cap = initialCommission * 0.1;
+            capTextBox.Text = cap.ToString("C");
+            lastCommission = initialCommission - cap;
+            lastCommissionLabel.Text = initialCommission + " - " + cap + " =";
+            lastCommissionTextBox.Text = lastCommission.ToString("C");
+            displayLabel.Text = "Commission - Cap";
+        }
+
+        private void capAndloyaltyCheckedCase()
+        {
+            salesPrice = double.Parse(salesPriceTextBox.Text);
+            salesKWTCFee = 25;
+            kwTcFeeTextBox.Text = salesKWTCFee.ToString("C");
+            initialCommission = salesPrice * 0.03;
+            commissionTextBox.Text = initialCommission.ToString("C");
+            commissionLabel.Text = salesPrice + " x 3% =";
+            lastCommissionLabel.Text = initialCommission + " - " + salesKWTCFee + " =";
+            lastCommission = initialCommission - salesKWTCFee;
+            lastCommissionTextBox.Text = lastCommission.ToString("C");
+            displayLabel.Text = "Commission - KW TC Fee";
+        }
+
+        private void noChecksCase()
+        {
+            salesPrice = double.Parse(salesPriceTextBox.Text);
+            initialCommission = salesPrice * 0.03;
+            commissionTextBox.Text = initialCommission.ToString("C");
+            commissionLabel.Text = salesPrice + " x 3% =";
+            capLabel.Text = initialCommission + " x 10% =";
+            cap = initialCommission * 0.1;
+            capTextBox.Text = cap.ToString("C");
+            loyalty = initialCommission * 0.06;
+            loyaltyLabel.Text = initialCommission + " x 6% =";
+            loyaltyTextBox.Text = loyalty.ToString("C");
+            lastCommission = initialCommission - loyalty - cap;
+            lastCommissionLabel.Text = initialCommission + " - " + loyalty + " - " + cap + " =";
+            lastCommissionTextBox.Text = lastCommission.ToString("C");
+            displayLabel.Text = "Commission - Loyalty - Cap";
+        }
+
+        private void salesPriceTextBox__KeyDown(object sender, KeyEventArgs e)
+        {
+            try
             {
-                salesKWTCFee = 25;
+                // Check enter key press
+                if (e.KeyCode == Keys.Enter)
+                {
+                    if ((capCheckBox_.Checked) && (loyaltyCheckBox_.Checked))
+                    {
+                        capAndloyaltyCheckedCase();
+                    }
+                    else if ((capCheckBox_.Checked) && (!loyaltyCheckBox_.Checked))
+                    {
+                        capCheckedNoLoyaltyCase();
+                    }
+                    else if ((!capCheckBox_.Checked) && (loyaltyCheckBox_.Checked))
+                    {
+                        loyaltyCheckedNoCapCase();
+                    }
+                    else if ((!capCheckBox_.Checked) && (!loyaltyCheckBox_.Checked))
+                    {
+                        noChecksCase();
+                    }
+
+                }
             }
-            else if (!capCheckBox.Checked)
+            catch (Exception ex)
             {
-                salesKWTCFee = 0;
+                MessageBox.Show(ex.Message);
+                salesPriceTextBox.Text = string.Empty;
+                kwTcFeeTextBox.Text = string.Empty;
+                loyaltyLabel.Text = string.Empty;
+                loyaltyTextBox.Text = string.Empty;
+                capLabel.Text = string.Empty;
+                capTextBox.Text = string.Empty;
+                commissionLabel.Text = string.Empty;
+                commissionTextBox.Text = string.Empty;
+                lastCommissionTextBox.Text = string.Empty;
+                lastCommissionLabel.Text = string.Empty;
+                displayLabel.Text = string.Empty;
             }
         }
     }
