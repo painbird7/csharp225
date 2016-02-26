@@ -425,9 +425,8 @@
             this.displayLabel__.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayLabel__.Location = new System.Drawing.Point(427, 434);
             this.displayLabel__.Name = "displayLabel__";
-            this.displayLabel__.Size = new System.Drawing.Size(30, 13);
+            this.displayLabel__.Size = new System.Drawing.Size(0, 13);
             this.displayLabel__.TabIndex = 67;
-            this.displayLabel__.Text = "label";
             // 
             // capLabel__
             // 
@@ -585,9 +584,8 @@
             this.displayLabel_.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.displayLabel_.Location = new System.Drawing.Point(427, 213);
             this.displayLabel_.Name = "displayLabel_";
-            this.displayLabel_.Size = new System.Drawing.Size(30, 13);
+            this.displayLabel_.Size = new System.Drawing.Size(0, 13);
             this.displayLabel_.TabIndex = 49;
-            this.displayLabel_.Text = "label";
             // 
             // capLabel_
             // 
