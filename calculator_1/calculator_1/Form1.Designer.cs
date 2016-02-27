@@ -141,7 +141,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(649, 518);
+            this.tabControl1.Size = new System.Drawing.Size(649, 466);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -172,7 +172,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(641, 488);
+            this.tabPage1.Size = new System.Drawing.Size(641, 436);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listing";
             // 
@@ -180,7 +180,7 @@
             // 
             this.loyaltyCheckBox.AutoSize = true;
             this.loyaltyCheckBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loyaltyCheckBox.Location = new System.Drawing.Point(89, 117);
+            this.loyaltyCheckBox.Location = new System.Drawing.Point(84, 117);
             this.loyaltyCheckBox.Name = "loyaltyCheckBox";
             this.loyaltyCheckBox.Size = new System.Drawing.Size(62, 17);
             this.loyaltyCheckBox.TabIndex = 30;
@@ -191,7 +191,7 @@
             // 
             this.capCheckBox.AutoSize = true;
             this.capCheckBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.capCheckBox.Location = new System.Drawing.Point(72, 168);
+            this.capCheckBox.Location = new System.Drawing.Point(67, 168);
             this.capCheckBox.Name = "capCheckBox";
             this.capCheckBox.Size = new System.Drawing.Size(62, 17);
             this.capCheckBox.TabIndex = 29;
@@ -373,7 +373,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(641, 488);
+            this.tabPage2.Size = new System.Drawing.Size(641, 436);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Selling";
             // 
@@ -382,7 +382,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Silver;
-            this.label12.Location = new System.Drawing.Point(286, 283);
+            this.label12.Location = new System.Drawing.Point(298, 249);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(26, 21);
             this.label12.TabIndex = 72;
@@ -392,7 +392,7 @@
             // 
             this.loyaltyCheckBox__.AutoSize = true;
             this.loyaltyCheckBox__.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loyaltyCheckBox__.Location = new System.Drawing.Point(35, 338);
+            this.loyaltyCheckBox__.Location = new System.Drawing.Point(84, 290);
             this.loyaltyCheckBox__.Name = "loyaltyCheckBox__";
             this.loyaltyCheckBox__.Size = new System.Drawing.Size(62, 17);
             this.loyaltyCheckBox__.TabIndex = 70;
@@ -403,7 +403,7 @@
             // 
             this.capCheckBox__.AutoSize = true;
             this.capCheckBox__.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.capCheckBox__.Location = new System.Drawing.Point(35, 380);
+            this.capCheckBox__.Location = new System.Drawing.Point(67, 322);
             this.capCheckBox__.Name = "capCheckBox__";
             this.capCheckBox__.Size = new System.Drawing.Size(62, 17);
             this.capCheckBox__.TabIndex = 69;
@@ -413,7 +413,7 @@
             // lastCommissionTextBox__
             // 
             this.lastCommissionTextBox__.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastCommissionTextBox__.Location = new System.Drawing.Point(430, 450);
+            this.lastCommissionTextBox__.Location = new System.Drawing.Point(430, 380);
             this.lastCommissionTextBox__.Name = "lastCommissionTextBox__";
             this.lastCommissionTextBox__.ReadOnly = true;
             this.lastCommissionTextBox__.Size = new System.Drawing.Size(171, 25);
@@ -423,7 +423,7 @@
             // 
             this.displayLabel__.AutoSize = true;
             this.displayLabel__.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayLabel__.Location = new System.Drawing.Point(427, 434);
+            this.displayLabel__.Location = new System.Drawing.Point(427, 408);
             this.displayLabel__.Name = "displayLabel__";
             this.displayLabel__.Size = new System.Drawing.Size(0, 13);
             this.displayLabel__.TabIndex = 67;
@@ -431,14 +431,14 @@
             // capLabel__
             // 
             this.capLabel__.AutoSize = true;
-            this.capLabel__.Location = new System.Drawing.Point(182, 360);
+            this.capLabel__.Location = new System.Drawing.Point(182, 319);
             this.capLabel__.Name = "capLabel__";
             this.capLabel__.Size = new System.Drawing.Size(0, 17);
             this.capLabel__.TabIndex = 66;
             // 
             // capTextBox__
             // 
-            this.capTextBox__.Location = new System.Drawing.Point(430, 357);
+            this.capTextBox__.Location = new System.Drawing.Point(430, 316);
             this.capTextBox__.Name = "capTextBox__";
             this.capTextBox__.ReadOnly = true;
             this.capTextBox__.Size = new System.Drawing.Size(171, 25);
@@ -447,7 +447,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(32, 360);
+            this.label18.Location = new System.Drawing.Point(32, 319);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(34, 17);
             this.label18.TabIndex = 64;
@@ -456,7 +456,7 @@
             // lastCommissionLabel__
             // 
             this.lastCommissionLabel__.AutoSize = true;
-            this.lastCommissionLabel__.Location = new System.Drawing.Point(182, 453);
+            this.lastCommissionLabel__.Location = new System.Drawing.Point(182, 383);
             this.lastCommissionLabel__.Name = "lastCommissionLabel__";
             this.lastCommissionLabel__.Size = new System.Drawing.Size(0, 17);
             this.lastCommissionLabel__.TabIndex = 63;
@@ -464,7 +464,7 @@
             // loyaltyLabel__
             // 
             this.loyaltyLabel__.AutoSize = true;
-            this.loyaltyLabel__.Location = new System.Drawing.Point(182, 318);
+            this.loyaltyLabel__.Location = new System.Drawing.Point(182, 287);
             this.loyaltyLabel__.Name = "loyaltyLabel__";
             this.loyaltyLabel__.Size = new System.Drawing.Size(0, 17);
             this.loyaltyLabel__.TabIndex = 62;
@@ -472,14 +472,14 @@
             // commissionLabel__
             // 
             this.commissionLabel__.AutoSize = true;
-            this.commissionLabel__.Location = new System.Drawing.Point(182, 401);
+            this.commissionLabel__.Location = new System.Drawing.Point(182, 351);
             this.commissionLabel__.Name = "commissionLabel__";
             this.commissionLabel__.Size = new System.Drawing.Size(0, 17);
             this.commissionLabel__.TabIndex = 61;
             // 
             // kwTcFeeTextBox__
             // 
-            this.kwTcFeeTextBox__.Location = new System.Drawing.Point(430, 283);
+            this.kwTcFeeTextBox__.Location = new System.Drawing.Point(430, 252);
             this.kwTcFeeTextBox__.Name = "kwTcFeeTextBox__";
             this.kwTcFeeTextBox__.ReadOnly = true;
             this.kwTcFeeTextBox__.Size = new System.Drawing.Size(171, 25);
@@ -487,7 +487,7 @@
             // 
             // loyaltyTextBox__
             // 
-            this.loyaltyTextBox__.Location = new System.Drawing.Point(430, 315);
+            this.loyaltyTextBox__.Location = new System.Drawing.Point(430, 284);
             this.loyaltyTextBox__.Name = "loyaltyTextBox__";
             this.loyaltyTextBox__.ReadOnly = true;
             this.loyaltyTextBox__.Size = new System.Drawing.Size(171, 25);
@@ -495,7 +495,7 @@
             // 
             // commissionTextBox__
             // 
-            this.commissionTextBox__.Location = new System.Drawing.Point(430, 398);
+            this.commissionTextBox__.Location = new System.Drawing.Point(430, 348);
             this.commissionTextBox__.Name = "commissionTextBox__";
             this.commissionTextBox__.ReadOnly = true;
             this.commissionTextBox__.Size = new System.Drawing.Size(171, 25);
@@ -504,7 +504,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(32, 401);
+            this.label26.Location = new System.Drawing.Point(32, 351);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(82, 17);
             this.label26.TabIndex = 55;
@@ -513,7 +513,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(32, 286);
+            this.label27.Location = new System.Drawing.Point(32, 255);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(74, 17);
             this.label27.TabIndex = 57;
@@ -522,7 +522,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(32, 318);
+            this.label28.Location = new System.Drawing.Point(32, 287);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(51, 17);
             this.label28.TabIndex = 56;
@@ -533,7 +533,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Silver;
-            this.label11.Location = new System.Drawing.Point(258, 62);
+            this.label11.Location = new System.Drawing.Point(269, 56);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 21);
             this.label11.TabIndex = 54;
@@ -542,7 +542,7 @@
             // label10
             // 
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label10.Location = new System.Drawing.Point(17, 268);
+            this.label10.Location = new System.Drawing.Point(17, 240);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(607, 2);
             this.label10.TabIndex = 53;
@@ -551,7 +551,7 @@
             // 
             this.loyaltyCheckBox_.AutoSize = true;
             this.loyaltyCheckBox_.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loyaltyCheckBox_.Location = new System.Drawing.Point(35, 117);
+            this.loyaltyCheckBox_.Location = new System.Drawing.Point(84, 97);
             this.loyaltyCheckBox_.Name = "loyaltyCheckBox_";
             this.loyaltyCheckBox_.Size = new System.Drawing.Size(62, 17);
             this.loyaltyCheckBox_.TabIndex = 52;
@@ -562,7 +562,7 @@
             // 
             this.capCheckBox_.AutoSize = true;
             this.capCheckBox_.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.capCheckBox_.Location = new System.Drawing.Point(35, 159);
+            this.capCheckBox_.Location = new System.Drawing.Point(67, 129);
             this.capCheckBox_.Name = "capCheckBox_";
             this.capCheckBox_.Size = new System.Drawing.Size(62, 17);
             this.capCheckBox_.TabIndex = 51;
@@ -572,7 +572,7 @@
             // lastCommissionTextBox_
             // 
             this.lastCommissionTextBox_.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastCommissionTextBox_.Location = new System.Drawing.Point(430, 229);
+            this.lastCommissionTextBox_.Location = new System.Drawing.Point(430, 187);
             this.lastCommissionTextBox_.Name = "lastCommissionTextBox_";
             this.lastCommissionTextBox_.ReadOnly = true;
             this.lastCommissionTextBox_.Size = new System.Drawing.Size(171, 25);
@@ -582,7 +582,7 @@
             // 
             this.displayLabel_.AutoSize = true;
             this.displayLabel_.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayLabel_.Location = new System.Drawing.Point(427, 213);
+            this.displayLabel_.Location = new System.Drawing.Point(427, 215);
             this.displayLabel_.Name = "displayLabel_";
             this.displayLabel_.Size = new System.Drawing.Size(0, 13);
             this.displayLabel_.TabIndex = 49;
@@ -590,14 +590,14 @@
             // capLabel_
             // 
             this.capLabel_.AutoSize = true;
-            this.capLabel_.Location = new System.Drawing.Point(182, 139);
+            this.capLabel_.Location = new System.Drawing.Point(182, 126);
             this.capLabel_.Name = "capLabel_";
             this.capLabel_.Size = new System.Drawing.Size(0, 17);
             this.capLabel_.TabIndex = 47;
             // 
             // capTextBox_
             // 
-            this.capTextBox_.Location = new System.Drawing.Point(430, 136);
+            this.capTextBox_.Location = new System.Drawing.Point(430, 123);
             this.capTextBox_.Name = "capTextBox_";
             this.capTextBox_.ReadOnly = true;
             this.capTextBox_.Size = new System.Drawing.Size(171, 25);
@@ -606,7 +606,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(32, 139);
+            this.label13.Location = new System.Drawing.Point(32, 126);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(34, 17);
             this.label13.TabIndex = 45;
@@ -615,7 +615,7 @@
             // lastCommissionLabel_
             // 
             this.lastCommissionLabel_.AutoSize = true;
-            this.lastCommissionLabel_.Location = new System.Drawing.Point(182, 232);
+            this.lastCommissionLabel_.Location = new System.Drawing.Point(182, 190);
             this.lastCommissionLabel_.Name = "lastCommissionLabel_";
             this.lastCommissionLabel_.Size = new System.Drawing.Size(0, 17);
             this.lastCommissionLabel_.TabIndex = 44;
@@ -631,7 +631,7 @@
             // loyaltyLabel_
             // 
             this.loyaltyLabel_.AutoSize = true;
-            this.loyaltyLabel_.Location = new System.Drawing.Point(182, 97);
+            this.loyaltyLabel_.Location = new System.Drawing.Point(182, 94);
             this.loyaltyLabel_.Name = "loyaltyLabel_";
             this.loyaltyLabel_.Size = new System.Drawing.Size(0, 17);
             this.loyaltyLabel_.TabIndex = 40;
@@ -639,14 +639,14 @@
             // commissionLabel_
             // 
             this.commissionLabel_.AutoSize = true;
-            this.commissionLabel_.Location = new System.Drawing.Point(182, 180);
+            this.commissionLabel_.Location = new System.Drawing.Point(182, 158);
             this.commissionLabel_.Name = "commissionLabel_";
             this.commissionLabel_.Size = new System.Drawing.Size(0, 17);
             this.commissionLabel_.TabIndex = 39;
             // 
             // kwTcFeeTextBox_
             // 
-            this.kwTcFeeTextBox_.Location = new System.Drawing.Point(430, 62);
+            this.kwTcFeeTextBox_.Location = new System.Drawing.Point(430, 59);
             this.kwTcFeeTextBox_.Name = "kwTcFeeTextBox_";
             this.kwTcFeeTextBox_.ReadOnly = true;
             this.kwTcFeeTextBox_.Size = new System.Drawing.Size(171, 25);
@@ -654,7 +654,7 @@
             // 
             // loyaltyTextBox_
             // 
-            this.loyaltyTextBox_.Location = new System.Drawing.Point(430, 94);
+            this.loyaltyTextBox_.Location = new System.Drawing.Point(430, 91);
             this.loyaltyTextBox_.Name = "loyaltyTextBox_";
             this.loyaltyTextBox_.ReadOnly = true;
             this.loyaltyTextBox_.Size = new System.Drawing.Size(171, 25);
@@ -662,7 +662,7 @@
             // 
             // commissionTextBox_
             // 
-            this.commissionTextBox_.Location = new System.Drawing.Point(430, 177);
+            this.commissionTextBox_.Location = new System.Drawing.Point(430, 155);
             this.commissionTextBox_.Name = "commissionTextBox_";
             this.commissionTextBox_.ReadOnly = true;
             this.commissionTextBox_.Size = new System.Drawing.Size(171, 25);
@@ -679,7 +679,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(32, 180);
+            this.label20.Location = new System.Drawing.Point(32, 158);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(82, 17);
             this.label20.TabIndex = 32;
@@ -688,7 +688,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(32, 65);
+            this.label21.Location = new System.Drawing.Point(32, 62);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(74, 17);
             this.label21.TabIndex = 34;
@@ -706,7 +706,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(32, 97);
+            this.label23.Location = new System.Drawing.Point(32, 94);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(51, 17);
             this.label23.TabIndex = 33;
@@ -714,7 +714,7 @@
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(322, 536);
+            this.clearButton.Location = new System.Drawing.Point(352, 476);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(125, 25);
             this.clearButton.TabIndex = 6;
@@ -724,7 +724,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(513, 536);
+            this.exitButton.Location = new System.Drawing.Point(520, 476);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(125, 25);
             this.exitButton.TabIndex = 7;
@@ -736,7 +736,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 575);
+            this.ClientSize = new System.Drawing.Size(650, 512);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.tabControl1);
