@@ -64,7 +64,7 @@
             this.lastCommissionLabel__ = new System.Windows.Forms.Label();
             this.loyaltyLabel__ = new System.Windows.Forms.Label();
             this.commissionLabel__ = new System.Windows.Forms.Label();
-            this.kwTCFeeTextBox__ = new System.Windows.Forms.TextBox();
+            this.kwTcFeeTextBox__ = new System.Windows.Forms.TextBox();
             this.loyaltyTextBox__ = new System.Windows.Forms.TextBox();
             this.commissionTextBox__ = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.loyaltyLabel_ = new System.Windows.Forms.Label();
             this.commissionLabel_ = new System.Windows.Forms.Label();
-            this.kwTCFeeTextBox_ = new System.Windows.Forms.TextBox();
+            this.kwTcFeeTextBox_ = new System.Windows.Forms.TextBox();
             this.loyaltyTextBox_ = new System.Windows.Forms.TextBox();
             this.commissionTextBox_ = new System.Windows.Forms.TextBox();
             this.salesPriceTextBox_ = new System.Windows.Forms.TextBox();
@@ -343,7 +343,7 @@
             this.tabPage2.Controls.Add(this.lastCommissionLabel__);
             this.tabPage2.Controls.Add(this.loyaltyLabel__);
             this.tabPage2.Controls.Add(this.commissionLabel__);
-            this.tabPage2.Controls.Add(this.kwTCFeeTextBox__);
+            this.tabPage2.Controls.Add(this.kwTcFeeTextBox__);
             this.tabPage2.Controls.Add(this.loyaltyTextBox__);
             this.tabPage2.Controls.Add(this.commissionTextBox__);
             this.tabPage2.Controls.Add(this.label26);
@@ -362,7 +362,7 @@
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.loyaltyLabel_);
             this.tabPage2.Controls.Add(this.commissionLabel_);
-            this.tabPage2.Controls.Add(this.kwTCFeeTextBox_);
+            this.tabPage2.Controls.Add(this.kwTcFeeTextBox_);
             this.tabPage2.Controls.Add(this.loyaltyTextBox_);
             this.tabPage2.Controls.Add(this.commissionTextBox_);
             this.tabPage2.Controls.Add(this.salesPriceTextBox_);
@@ -477,13 +477,13 @@
             this.commissionLabel__.Size = new System.Drawing.Size(0, 17);
             this.commissionLabel__.TabIndex = 61;
             // 
-            // kwTCFeeTextBox__
+            // kwTcFeeTextBox__
             // 
-            this.kwTCFeeTextBox__.Location = new System.Drawing.Point(430, 283);
-            this.kwTCFeeTextBox__.Name = "kwTCFeeTextBox__";
-            this.kwTCFeeTextBox__.ReadOnly = true;
-            this.kwTCFeeTextBox__.Size = new System.Drawing.Size(171, 25);
-            this.kwTCFeeTextBox__.TabIndex = 60;
+            this.kwTcFeeTextBox__.Location = new System.Drawing.Point(430, 283);
+            this.kwTcFeeTextBox__.Name = "kwTcFeeTextBox__";
+            this.kwTcFeeTextBox__.ReadOnly = true;
+            this.kwTcFeeTextBox__.Size = new System.Drawing.Size(171, 25);
+            this.kwTcFeeTextBox__.TabIndex = 60;
             // 
             // loyaltyTextBox__
             // 
@@ -644,13 +644,13 @@
             this.commissionLabel_.Size = new System.Drawing.Size(0, 17);
             this.commissionLabel_.TabIndex = 39;
             // 
-            // kwTCFeeTextBox_
+            // kwTcFeeTextBox_
             // 
-            this.kwTCFeeTextBox_.Location = new System.Drawing.Point(430, 62);
-            this.kwTCFeeTextBox_.Name = "kwTCFeeTextBox_";
-            this.kwTCFeeTextBox_.ReadOnly = true;
-            this.kwTCFeeTextBox_.Size = new System.Drawing.Size(171, 25);
-            this.kwTCFeeTextBox_.TabIndex = 38;
+            this.kwTcFeeTextBox_.Location = new System.Drawing.Point(430, 62);
+            this.kwTcFeeTextBox_.Name = "kwTcFeeTextBox_";
+            this.kwTcFeeTextBox_.ReadOnly = true;
+            this.kwTcFeeTextBox_.Size = new System.Drawing.Size(171, 25);
+            this.kwTcFeeTextBox_.TabIndex = 38;
             // 
             // loyaltyTextBox_
             // 
@@ -793,7 +793,7 @@
         private System.Windows.Forms.Label lastCommissionLabel_;
         private System.Windows.Forms.Label loyaltyLabel_;
         private System.Windows.Forms.Label commissionLabel_;
-        private System.Windows.Forms.TextBox kwTCFeeTextBox_;
+        private System.Windows.Forms.TextBox kwTcFeeTextBox_;
         private System.Windows.Forms.TextBox loyaltyTextBox_;
         private System.Windows.Forms.TextBox commissionTextBox_;
         private System.Windows.Forms.TextBox salesPriceTextBox_;
@@ -814,7 +814,7 @@
         private System.Windows.Forms.Label lastCommissionLabel__;
         private System.Windows.Forms.Label loyaltyLabel__;
         private System.Windows.Forms.Label commissionLabel__;
-        private System.Windows.Forms.TextBox kwTCFeeTextBox__;
+        private System.Windows.Forms.TextBox kwTcFeeTextBox__;
         private System.Windows.Forms.TextBox loyaltyTextBox__;
         private System.Windows.Forms.TextBox commissionTextBox__;
         private System.Windows.Forms.Label label26;
