@@ -293,14 +293,14 @@ namespace calculator_1
                 salesKWTCFee__ = 12.5;
                 kwTcFeeTextBox__.Text = salesKWTCFee__.ToString("C");
                 salesPrice__ = double.Parse(salesPriceTextBox_.Text);
-                initialCommission__ = salesPrice__ * 0.03;
+                initialCommission__ = salesPrice__ * 0.015;
                 commissionTextBox__.Text = initialCommission__.ToString("C");
-                commissionLabel__.Text = salesPrice__ + " x 3% =";
+                commissionLabel__.Text = salesPrice__ + " x 1.5% =";
                 capLabel__.Text = initialCommission__ + " x 10% =";
                 cap__ = initialCommission__ * 0.1;
                 capTextBox__.Text = cap__.ToString("C");
                 lastCommission__ = initialCommission__ - salesKWTCFee__ - cap__;
-                lastCommissionLabel__.Text = initialCommission__ + " - " + cap__ + " =";
+                lastCommissionLabel__.Text = initialCommission__ + " - " + salesKWTCFee__ + " - " + cap__ + " =";
                 lastCommissionTextBox__.Text = lastCommission__.ToString("C");
                 displayLabel__.Text = "Commission - KW TC Fee - Cap";
             }
@@ -308,9 +308,9 @@ namespace calculator_1
             else if (!capCheckBox_.Checked)
             {
                 salesPrice__ = double.Parse(salesPriceTextBox_.Text);
-                initialCommission__ = salesPrice__ * 0.03;
+                initialCommission__ = salesPrice__ * 0.015;
                 commissionTextBox__.Text = initialCommission__.ToString("C");
-                commissionLabel__.Text = salesPrice__ + " x 3% =";
+                commissionLabel__.Text = salesPrice__ + " x 1.5% =";
                 capLabel__.Text = initialCommission__ + " x 10% =";
                 cap__ = initialCommission__ * 0.1;
                 capTextBox__.Text = cap__.ToString("C");
