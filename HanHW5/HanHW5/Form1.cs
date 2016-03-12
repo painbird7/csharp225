@@ -21,12 +21,7 @@ namespace HanHW5
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private double PresentValue(double futureValue, double annualInterestRate, double years)
         {
             double denominator = Math.Pow((1 + annualInterestRate), years);
@@ -35,6 +30,7 @@ namespace HanHW5
 
         private void exitButton_Click(object sender, EventArgs e)
         {
+            // Close the form.
             this.Close();
         }
 
@@ -43,37 +39,27 @@ namespace HanHW5
             // Declar variables to hold three values. 
             double futureValue, annualInterestRate, years, resultNumber;
 
-            // Check all three textboxes and proceed to next if condition if all are filled.
-            if ((futureValueTextBox.Text != "") && (annualInterestRateTextBox.Text != "") && (yearsTextBox.Text != ""))
+            // Parse user input and pass them to PresentValue method.
+            if (double.TryParse(futureValueTextBox.Text, out futureValue) && double.TryParse(annualInterestRateTextBox.Text, out annualInterestRate) && double.TryParse(yearsTextBox.Text, out years))
             {
-                // Parse user input and pass them to PresentValue method.
-                if (double.TryParse(futureValueTextBox.Text, out futureValue) && double.TryParse(annualInterestRateTextBox.Text, out annualInterestRate) && double.TryParse(yearsTextBox.Text, out years))
+                // Check and display the result if it's not lower than 0.01.
+                resultNumber = PresentValue(futureValue, annualInterestRate, years);
+                if (resultNumber >= 0.01)
                 {
-                    // Get the result and assign it to resultNumber and display it to the present value textbox control.
-                    resultNumber = PresentValue(futureValue, annualInterestRate, years);
-
-                    if (resultNumber >= 0.01)
-                    {
-                        presentValueTextBox.Text = resultNumber.ToString("C");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Present value is lower than $0.01. Please adjust your input numbers.");
-                    }
+                    presentValueTextBox.Text = resultNumber.ToString("C");
                 }
                 else
                 {
-                    // Display an error message.
-                    MessageBox.Show("Please enter numbers only.", "Input Type Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Present value is lower than $0.01. Please adjust your input numbers.");
                 }
             }
             else
             {
                 // Display an error message.
-                MessageBox.Show("Please enter all three values.");
+                MessageBox.Show("Please enter numbers.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
+        }    
+    
         private void clearButton_Click(object sender, EventArgs e)
         {
             // Clear all four textbox controls.
