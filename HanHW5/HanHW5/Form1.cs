@@ -24,6 +24,7 @@ namespace HanHW5
         
         private double PresentValue(double futureValue, double annualInterestRate, double years)
         {
+            // Method to calculate and return the present value
             double denominator = Math.Pow((1 + annualInterestRate), years);
             return futureValue / denominator;
         }
@@ -46,10 +47,12 @@ namespace HanHW5
                 resultNumber = PresentValue(futureValue, annualInterestRate, years);
                 if (resultNumber >= 0.01)
                 {
+                    // Display resultNumber in currency format in the textbox.
                     presentValueTextBox.Text = resultNumber.ToString("C");
                 }
                 else
                 {
+                    // Inform user regarding the result not being practical number.
                     MessageBox.Show("Present value is lower than $0.01. Please adjust your input numbers.");
                 }
             }
