@@ -29,9 +29,9 @@ namespace HanHW5
 
         private double PresentValue(double futureValue, double annualInterestRate, double years)
         {
-            double denominator = Math.Pow((1 + annualInterestRate), years);
-            double result = futureValue / denominator;
-            return result;
+            double inter = 1 + annualInterestRate;
+            double denominator = Math.Pow(inter, years);
+            return futureValue / denominator;
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -41,38 +41,39 @@ namespace HanHW5
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            try
-            {
+            // Declar variables to hold three values. 
+            double futureValue, annualInterestRate, years, resultNumber;
 
-                if ((futureValueTextBox.Text != "") && (annualInterestRateTextBox.Text != "") && (yearsTextBox.Text != ""))
+            // Check all three textboxes and proceed to next if condition if all are filled.
+            if ((futureValueTextBox.Text != "") && (annualInterestRateTextBox.Text != "") && (yearsTextBox.Text != ""))
+            {
+                // Parse user input and pass them to PresentValue method.
+                if (double.TryParse(futureValueTextBox.Text, out futureValue) && double.TryParse(annualInterestRateTextBox.Text, out annualInterestRate) && double.TryParse(yearsTextBox.Text, out years))
                 {
-                    double futureValue, annualInterestRate;
-                    double years;
-                    double.TryParse(futureValueTextBox.Text, out futureValue);
-                    double.TryParse(annualInterestRateTextBox.Text, out annualInterestRate);
-                    double.TryParse(yearsTextBox.Text, out years);
-                    presentValueTextBox.Text = PresentValue(futureValue, annualInterestRate, years).ToString("C");
+                    // Get the result and assign it to resultNumber and display it to the present value textbox control.
+                    resultNumber = PresentValue(futureValue, annualInterestRate, years);
+                    presentValueTextBox.Text = resultNumber.ToString("C");
                 }
                 else
                 {
-                    MessageBox.Show("All three numbers are required in order to calculate the present value.");
+                    // Display an error message.
+                    MessageBox.Show("Input type error. Please enter numbers only.");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                // Display an error message.
+                MessageBox.Show("Please enter all three values.");
             }
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
+            // Clear all four textbox controls.
             futureValueTextBox.Text = string.Empty;
             presentValueTextBox.Text = string.Empty;
             annualInterestRateTextBox.Text = string.Empty;
             yearsTextBox.Text = string.Empty;
         }
-
-
-
     }
 }
