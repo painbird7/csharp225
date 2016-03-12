@@ -29,8 +29,7 @@ namespace HanHW5
 
         private double PresentValue(double futureValue, double annualInterestRate, double years)
         {
-            double inter = 1 + annualInterestRate;
-            double denominator = Math.Pow(inter, years);
+            double denominator = Math.Pow((1 + annualInterestRate), years);
             return futureValue / denominator;
         }
 
@@ -52,12 +51,20 @@ namespace HanHW5
                 {
                     // Get the result and assign it to resultNumber and display it to the present value textbox control.
                     resultNumber = PresentValue(futureValue, annualInterestRate, years);
-                    presentValueTextBox.Text = resultNumber.ToString("C");
+
+                    if (resultNumber >= 0.01)
+                    {
+                        presentValueTextBox.Text = resultNumber.ToString("C");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Present value is lower than $0.01. Please adjust your input numbers.");
+                    }
                 }
                 else
                 {
                     // Display an error message.
-                    MessageBox.Show("Input type error. Please enter numbers only.");
+                    MessageBox.Show("Please enter numbers only.", "Input Type Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
