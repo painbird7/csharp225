@@ -103,10 +103,12 @@
             // 
             // presentValueTextBox
             // 
-            this.presentValueTextBox.Location = new System.Drawing.Point(196, 214);
+            this.presentValueTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.presentValueTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presentValueTextBox.Location = new System.Drawing.Point(196, 217);
             this.presentValueTextBox.Name = "presentValueTextBox";
             this.presentValueTextBox.ReadOnly = true;
-            this.presentValueTextBox.Size = new System.Drawing.Size(140, 25);
+            this.presentValueTextBox.Size = new System.Drawing.Size(140, 18);
             this.presentValueTextBox.TabIndex = 7;
             // 
             // clearButton
@@ -171,7 +173,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Present Value Calculator";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

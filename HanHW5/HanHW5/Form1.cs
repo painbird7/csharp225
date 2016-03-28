@@ -21,58 +21,55 @@ namespace HanHW5
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private double PresentValue(double futureValue, double annualInterestRate, double years)
         {
+            // Method to calculate and return the present value
             double denominator = Math.Pow((1 + annualInterestRate), years);
-            double result = futureValue / denominator;
-            return result;
+            return futureValue / denominator;
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
+            // Close the form.
             this.Close();
         }
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            try
-            {
+            // Declar variables to hold three values. 
+            double futureValue, annualInterestRate, years, resultNumber;
 
-                if ((futureValueTextBox.Text != "") && (annualInterestRateTextBox.Text != "") && (yearsTextBox.Text != ""))
+            // Parse user input and pass them to PresentValue method.
+            if (double.TryParse(futureValueTextBox.Text, out futureValue) && double.TryParse(annualInterestRateTextBox.Text, out annualInterestRate) && double.TryParse(yearsTextBox.Text, out years))
+            {
+                // Check and display the result if it's not lower than 0.01.
+                resultNumber = PresentValue(futureValue, annualInterestRate, years);
+                if (resultNumber >= 0.01)
                 {
-                    double futureValue, annualInterestRate;
-                    double years;
-                    double.TryParse(futureValueTextBox.Text, out futureValue);
-                    double.TryParse(annualInterestRateTextBox.Text, out annualInterestRate);
-                    double.TryParse(yearsTextBox.Text, out years);
-                    presentValueTextBox.Text = PresentValue(futureValue, annualInterestRate, years).ToString("C");
+                    // Display resultNumber in currency format in the textbox.
+                    presentValueTextBox.Text = resultNumber.ToString("C");
                 }
                 else
                 {
-                    MessageBox.Show("All three numbers are required in order to calculate the present value.");
+                    // Inform user regarding the result not being practical number.
+                    MessageBox.Show("Present value is lower than $0.01. Please adjust your input numbers.");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                // Display an error message.
+                MessageBox.Show("Please enter numbers.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
+        }    
+    
         private void clearButton_Click(object sender, EventArgs e)
         {
+            // Clear all four textbox controls.
             futureValueTextBox.Text = string.Empty;
             presentValueTextBox.Text = string.Empty;
             annualInterestRateTextBox.Text = string.Empty;
             yearsTextBox.Text = string.Empty;
         }
-
-
-
     }
 }
