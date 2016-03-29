@@ -27,17 +27,26 @@ namespace HanHW6
             InitializeComponent();
         }
 
+        private void Display(List<int> numberList)
+        {
+            foreach (int number in numberList)
+            {
+                listBox.Items.Add(number);
+            }
+        }
+
         private void ReadNumber(List<int> numberList)
         {
             try
             {
                 StreamReader inputFile;
                 string inputFilePath = Environment.CurrentDirectory;
-                inputFile = File.OpenText(Path.Combine(inputFilePath, "USPopulation.txt"));
+                string fileName = Path.Combine(inputFilePath, "USPopulation.txt");
+                inputFile = File.OpenText(fileName);
+                filePathTextBox.Text = fileName.ToString();
                 while (!inputFile.EndOfStream)
                 {
                     numberList.Add(int.Parse(inputFile.ReadLine()));
-                    listBox.Items.Add(inputFile.ReadLine());
                 }
                 inputFile.Close();
             }
@@ -47,9 +56,16 @@ namespace HanHW6
             }
         }
 
-        private void DisplayNumber(List<int> numberList)
+        private double Average(List<int> numberList)
         {
-
+            int total = 0;
+            double average;
+            foreach (int number in numberList)
+            {
+                total += number;
+            }
+            average = (double)total / numberList.Count;
+            return average;
         }
 
         private void calculateButton_Click(object sender, EventArgs e)
@@ -60,6 +76,7 @@ namespace HanHW6
                 List<int> numberList = new List<int>();
                 
                 ReadNumber(numberList);
+                Display(numberList);
                 
             }
             catch (Exception ex)
@@ -76,6 +93,7 @@ namespace HanHW6
         private void clearButton_Click(object sender, EventArgs e)
         {
             listBox.Items.Clear();
+            filePathTextBox.Text = String.Empty;
         }
     }
 }
