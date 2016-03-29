@@ -43,6 +43,7 @@ namespace HanHW6
                 string inputFilePath = Environment.CurrentDirectory;
                 string fileName = Path.Combine(inputFilePath, "USPopulation.txt");
                 inputFile = File.OpenText(fileName);
+                filePathLabel.Text = "File Path:";
                 filePathTextBox.Text = fileName.ToString();
                 while (!inputFile.EndOfStream)
                 {
@@ -93,7 +94,11 @@ namespace HanHW6
         private void clearButton_Click(object sender, EventArgs e)
         {
             listBox.Items.Clear();
-            filePathTextBox.Text = String.Empty;
+            filePathTextBox.Text = string.Empty;
+            greatestTextBox.Text = string.Empty;
+            leastTextBox.Text = string.Empty;
+            annualChangeTextBox.Text = string.Empty;
+            filePathLabel.Text = string.Empty;
         }
     }
 }
