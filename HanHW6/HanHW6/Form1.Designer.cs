@@ -32,13 +32,21 @@
             this.clearButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.listBox = new System.Windows.Forms.ListBox();
+            this.filePathTextBox = new System.Windows.Forms.TextBox();
+            this.filePathLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.annualChangeTextBox = new System.Windows.Forms.TextBox();
+            this.greatestTextBox = new System.Windows.Forms.TextBox();
+            this.leastTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // calculateButton
             // 
-            this.calculateButton.Location = new System.Drawing.Point(151, 256);
+            this.calculateButton.Location = new System.Drawing.Point(12, 391);
             this.calculateButton.Name = "calculateButton";
-            this.calculateButton.Size = new System.Drawing.Size(75, 23);
+            this.calculateButton.Size = new System.Drawing.Size(87, 27);
             this.calculateButton.TabIndex = 0;
             this.calculateButton.Text = "&Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
@@ -46,9 +54,9 @@
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(295, 256);
+            this.clearButton.Location = new System.Drawing.Point(151, 391);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.Size = new System.Drawing.Size(87, 27);
             this.clearButton.TabIndex = 1;
             this.clearButton.Text = "Clea&r";
             this.clearButton.UseVisualStyleBackColor = true;
@@ -56,9 +64,9 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(478, 255);
+            this.exitButton.Location = new System.Drawing.Point(299, 391);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.Size = new System.Drawing.Size(87, 27);
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -67,23 +75,103 @@
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(83, 72);
+            this.listBox.ItemHeight = 15;
+            this.listBox.Location = new System.Drawing.Point(12, 72);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(321, 147);
+            this.listBox.Size = new System.Drawing.Size(374, 169);
             this.listBox.TabIndex = 3;
+            // 
+            // filePathTextBox
+            // 
+            this.filePathTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.filePathTextBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filePathTextBox.Location = new System.Drawing.Point(12, 27);
+            this.filePathTextBox.Multiline = true;
+            this.filePathTextBox.Name = "filePathTextBox";
+            this.filePathTextBox.ReadOnly = true;
+            this.filePathTextBox.Size = new System.Drawing.Size(374, 27);
+            this.filePathTextBox.TabIndex = 5;
+            this.filePathTextBox.TabStop = false;
+            // 
+            // filePathLabel
+            // 
+            this.filePathLabel.AutoSize = true;
+            this.filePathLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filePathLabel.Location = new System.Drawing.Point(12, 9);
+            this.filePathLabel.Name = "filePathLabel";
+            this.filePathLabel.Size = new System.Drawing.Size(0, 13);
+            this.filePathLabel.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 267);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Average Annual Change:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 308);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "The Year with The Greatest Increase:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 351);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(181, 15);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "The Year with The Least Increase:";
+            // 
+            // annualChangeTextBox
+            // 
+            this.annualChangeTextBox.Location = new System.Drawing.Point(286, 264);
+            this.annualChangeTextBox.Name = "annualChangeTextBox";
+            this.annualChangeTextBox.Size = new System.Drawing.Size(100, 23);
+            this.annualChangeTextBox.TabIndex = 10;
+            // 
+            // greatestTextBox
+            // 
+            this.greatestTextBox.Location = new System.Drawing.Point(286, 305);
+            this.greatestTextBox.Name = "greatestTextBox";
+            this.greatestTextBox.Size = new System.Drawing.Size(100, 23);
+            this.greatestTextBox.TabIndex = 11;
+            // 
+            // leastTextBox
+            // 
+            this.leastTextBox.Location = new System.Drawing.Point(286, 348);
+            this.leastTextBox.Name = "leastTextBox";
+            this.leastTextBox.Size = new System.Drawing.Size(100, 23);
+            this.leastTextBox.TabIndex = 12;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 444);
+            this.ClientSize = new System.Drawing.Size(403, 435);
+            this.Controls.Add(this.leastTextBox);
+            this.Controls.Add(this.greatestTextBox);
+            this.Controls.Add(this.annualChangeTextBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.filePathLabel);
+            this.Controls.Add(this.filePathTextBox);
             this.Controls.Add(this.listBox);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.calculateButton);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "US Populations 1950-1990";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -93,6 +181,14 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.ListBox listBox;
+        private System.Windows.Forms.TextBox filePathTextBox;
+        private System.Windows.Forms.Label filePathLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox annualChangeTextBox;
+        private System.Windows.Forms.TextBox greatestTextBox;
+        private System.Windows.Forms.TextBox leastTextBox;
     }
 }
 

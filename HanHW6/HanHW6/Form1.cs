@@ -31,6 +31,7 @@ namespace HanHW6
         {
             foreach (int number in numberList)
             {
+                // Add each value in the list to the list box control.
                 listBox.Items.Add(number);
             }
         }
@@ -39,16 +40,22 @@ namespace HanHW6
         {
             try
             {
+                // Declare SteamReader object
                 StreamReader inputFile;
+                // Get root directory of current project.
                 string inputFilePath = Environment.CurrentDirectory;
+                // Combine two paths into fileName.
                 string fileName = Path.Combine(inputFilePath, "USPopulation.txt");
+                // Open text file with StreamReader object
                 inputFile = File.OpenText(fileName);
                 filePathLabel.Text = "File Path:";
                 filePathTextBox.Text = fileName.ToString();
                 while (!inputFile.EndOfStream)
                 {
+                    // Add each value to numberList list.
                     numberList.Add(int.Parse(inputFile.ReadLine()));
                 }
+                // Close StreamReader.
                 inputFile.Close();
             }
             catch (Exception ex)
@@ -59,13 +66,22 @@ namespace HanHW6
 
         private double Average(List<int> numberList)
         {
+            // Create and initialize variables.
             int total = 0;
+            int i = 1;
             double average;
             foreach (int number in numberList)
             {
-                total += number;
+                // If statement to prevent querying index out of size of numberList.
+                if (i < 41)
+                {
+                    // Subtract index 1 value to index 0 value and increase index number each time and add to the total variable.
+                    total += (numberList[i] - numberList[i - 1]);
+                    i++;
+                }
             }
-            average = (double)total / numberList.Count;
+            // Average calculation
+            average = (double)total / (numberList.Count - 1);
             return average;
         }
 
@@ -75,10 +91,17 @@ namespace HanHW6
             {
                 // Create variables and an array to hold the numbers.
                 List<int> numberList = new List<int>();
-                
+                double average;
+                int greatest;
+                int least;
+
+                // Call methods to calculate values.
                 ReadNumber(numberList);
                 Display(numberList);
-                
+                average = Average(numberList);
+                // Take the average and round to two decimal places and output to the Textbox control.
+                annualChangeTextBox.Text = Math.Round(average, 2).ToString();
+
             }
             catch (Exception ex)
             {
@@ -88,11 +111,13 @@ namespace HanHW6
 
         private void exitButton_Click(object sender, EventArgs e)
         {
+            // Close the form.
             this.Close();
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
+            // Clear each control.
             listBox.Items.Clear();
             filePathTextBox.Text = string.Empty;
             greatestTextBox.Text = string.Empty;
