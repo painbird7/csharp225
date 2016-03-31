@@ -29,11 +29,37 @@ namespace HanHW6
 
         private void Display(List<int> numberList)
         {
+            List<int> increaseList = new List<int>();
+            List<int> yearList = new List<int>();
+            
+
+            int increase = 0;
+            int indexNumber = 1;
+            ListViewItem yearLV = new ListViewItem("Year");
+            ListViewItem popLV = new ListViewItem("Populations");
+            ListViewItem increaseLV = new ListViewItem("Increase");
+            int startYear = 1950;
+            
             foreach (int number in numberList)
             {
-                // Add each value in the list to the list box control.
-                listBox.Items.Add(number);
+                
+                if (indexNumber < 41)
+                {
+                    increase = numberList[indexNumber] - numberList[indexNumber - 1];
+                    increaseList.Add(increase);
+                    increaseLV.SubItems.Add(increase.ToString());
+                    indexNumber++;
+                }
+                popLV.SubItems.Add(number.ToString());
+                yearList.Add(startYear);
+                increaseLV.SubItems.Add(startYear.ToString());
+                startYear++;
+                
+                listView.Items.AddRange(new ListViewItem[] { yearLV, popLV, increaseLV });
+                listView.View = View.Details;
             }
+
+
         }
 
         private void ReadNumber(List<int> numberList)
@@ -42,14 +68,18 @@ namespace HanHW6
             {
                 // Declare SteamReader object
                 StreamReader inputFile;
+
                 // Get root directory of current project.
                 string inputFilePath = Environment.CurrentDirectory;
+
                 // Combine two paths into fileName.
                 string fileName = Path.Combine(inputFilePath, "USPopulation.txt");
+
                 // Open text file with StreamReader object
                 inputFile = File.OpenText(fileName);
                 filePathLabel.Text = "File Path:";
                 filePathTextBox.Text = fileName.ToString();
+
                 while (!inputFile.EndOfStream)
                 {
                     // Add each value to numberList list.
@@ -118,7 +148,7 @@ namespace HanHW6
         private void clearButton_Click(object sender, EventArgs e)
         {
             // Clear each control.
-            listBox.Items.Clear();
+            
             filePathTextBox.Text = string.Empty;
             greatestTextBox.Text = string.Empty;
             leastTextBox.Text = string.Empty;
