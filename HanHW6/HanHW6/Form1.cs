@@ -29,37 +29,31 @@ namespace HanHW6
 
         private void Display(List<int> numberList)
         {
-            List<int> increaseList = new List<int>();
-            List<int> yearList = new List<int>();
-            
-
             int increase = 0;
+            // Variables to iterate
             int indexNumber = 1;
-            ListViewItem yearLV = new ListViewItem("Year");
-            ListViewItem popLV = new ListViewItem("Populations");
-            ListViewItem increaseLV = new ListViewItem("Increase");
             int startYear = 1950;
-            
+            string[] column = new string[3];
+            ListViewItem newListView;
+
             foreach (int number in numberList)
             {
-                
                 if (indexNumber < 41)
                 {
+                    column[2] = increase.ToString();
                     increase = numberList[indexNumber] - numberList[indexNumber - 1];
-                    increaseList.Add(increase);
-                    increaseLV.SubItems.Add(increase.ToString());
+                    
                     indexNumber++;
                 }
-                popLV.SubItems.Add(number.ToString());
-                yearList.Add(startYear);
-                increaseLV.SubItems.Add(startYear.ToString());
-                startYear++;
+                column[1] = number.ToString();
+                column[0] = startYear.ToString();
                 
-                listView.Items.AddRange(new ListViewItem[] { yearLV, popLV, increaseLV });
+                startYear++;
                 listView.View = View.Details;
+                newListView = new ListViewItem(column);
+                listView.Items.Add(newListView);
+                listView.FullRowSelect = true;
             }
-
-
         }
 
         private void ReadNumber(List<int> numberList)
@@ -119,6 +113,7 @@ namespace HanHW6
         {
             try
             {
+                ClearAll();
                 // Create variables and an array to hold the numbers.
                 List<int> numberList = new List<int>();
                 double average;
@@ -145,15 +140,20 @@ namespace HanHW6
             this.Close();
         }
 
-        private void clearButton_Click(object sender, EventArgs e)
+        private void ClearAll()
         {
             // Clear each control.
-            
+            listView.Items.Clear();
             filePathTextBox.Text = string.Empty;
             greatestTextBox.Text = string.Empty;
             leastTextBox.Text = string.Empty;
             annualChangeTextBox.Text = string.Empty;
             filePathLabel.Text = string.Empty;
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            ClearAll();
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.calculateButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
@@ -40,12 +39,10 @@
             this.annualChangeTextBox = new System.Windows.Forms.TextBox();
             this.greatestTextBox = new System.Windows.Forms.TextBox();
             this.leastTextBox = new System.Windows.Forms.TextBox();
-            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listView = new System.Windows.Forms.ListView();
             this.yearCH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.popCH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.increaseCH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // calculateButton
@@ -147,19 +144,15 @@
             this.leastTextBox.Size = new System.Drawing.Size(100, 23);
             this.leastTextBox.TabIndex = 12;
             // 
-            // form1BindingSource
-            // 
-            this.form1BindingSource.DataSource = typeof(HanHW6.Form1);
-            // 
             // listView
             // 
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.yearCH,
             this.popCH,
             this.increaseCH});
-            this.listView.Location = new System.Drawing.Point(28, 75);
+            this.listView.Location = new System.Drawing.Point(15, 60);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(358, 145);
+            this.listView.Size = new System.Drawing.Size(371, 187);
             this.listView.TabIndex = 13;
             this.listView.UseCompatibleStateImageBehavior = false;
             // 
@@ -180,7 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 435);
+            this.ClientSize = new System.Drawing.Size(402, 441);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.leastTextBox);
             this.Controls.Add(this.greatestTextBox);
@@ -197,7 +190,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "US Populations 1950-1990";
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,11 +208,10 @@
         private System.Windows.Forms.TextBox annualChangeTextBox;
         private System.Windows.Forms.TextBox greatestTextBox;
         private System.Windows.Forms.TextBox leastTextBox;
-        private System.Windows.Forms.BindingSource form1BindingSource;
         private System.Windows.Forms.ListView listView;
-        private System.Windows.Forms.ColumnHeader increaseCH;
-        private System.Windows.Forms.ColumnHeader popCH;
         private System.Windows.Forms.ColumnHeader yearCH;
+        private System.Windows.Forms.ColumnHeader popCH;
+        private System.Windows.Forms.ColumnHeader increaseCH;
     }
 }
 
