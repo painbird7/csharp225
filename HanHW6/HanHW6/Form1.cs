@@ -33,27 +33,36 @@ namespace HanHW6
             // Variables to iterate
             int indexNumber = 1;
             int startYear = 1950;
-            string[] column = new string[3];
-            ListViewItem newListView;
+            const int ROWS = 41;
+            const int COLS = 3;
+            int[,] array2D = new int[ROWS, COLS];
+            listView.View = View.Details;
+            listView.FullRowSelect = true;
 
             foreach (int number in numberList)
             {
+                int i = 0;
+                array2D[i, 0] = startYear;
+                ListViewItem lvi = new ListViewItem(array2D[i, 0].ToString());
+                startYear++;
+                array2D[i, 1] = number;
+                lvi.SubItems.Add(array2D[i, 1].ToString());
+                i++;
+
                 if (indexNumber < 41)
                 {
-                    column[2] = increase.ToString();
                     increase = numberList[indexNumber] - numberList[indexNumber - 1];
-                    
+                    array2D[i, 2] = increase;
+                    lvi.SubItems.Add(array2D[i, 2].ToString());
                     indexNumber++;
                 }
-                column[1] = number.ToString();
-                column[0] = startYear.ToString();
-                
-                startYear++;
-                listView.View = View.Details;
-                newListView = new ListViewItem(column);
-                listView.Items.Add(newListView);
-                listView.FullRowSelect = true;
+                listView.Items.Add(lvi);
             }
+
+            int max = array2D.Cast<int>().Max();
+            greatestTextBox.Text = max.ToString();
+            int min = array2D.Cast<int>().Min();
+            leastTextBox.Text = min.ToString();
         }
 
         private void ReadNumber(List<int> numberList)
