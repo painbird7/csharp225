@@ -38,11 +38,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.annualChangeTextBox = new System.Windows.Forms.TextBox();
             this.greatestTextBox = new System.Windows.Forms.TextBox();
-            this.leastTextBox = new System.Windows.Forms.TextBox();
             this.listView = new System.Windows.Forms.ListView();
             this.yearCH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.popCH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.increaseCH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.leastTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // calculateButton
@@ -137,13 +137,6 @@
             this.greatestTextBox.Size = new System.Drawing.Size(100, 23);
             this.greatestTextBox.TabIndex = 11;
             // 
-            // leastTextBox
-            // 
-            this.leastTextBox.Location = new System.Drawing.Point(286, 348);
-            this.leastTextBox.Name = "leastTextBox";
-            this.leastTextBox.Size = new System.Drawing.Size(100, 23);
-            this.leastTextBox.TabIndex = 12;
-            // 
             // listView
             // 
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -169,13 +162,20 @@
             // 
             this.increaseCH.Text = "Increase";
             // 
+            // leastTextBox
+            // 
+            this.leastTextBox.Location = new System.Drawing.Point(286, 345);
+            this.leastTextBox.Name = "leastTextBox";
+            this.leastTextBox.Size = new System.Drawing.Size(100, 23);
+            this.leastTextBox.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 441);
-            this.Controls.Add(this.listView);
             this.Controls.Add(this.leastTextBox);
+            this.Controls.Add(this.listView);
             this.Controls.Add(this.greatestTextBox);
             this.Controls.Add(this.annualChangeTextBox);
             this.Controls.Add(this.label3);
@@ -207,11 +207,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox annualChangeTextBox;
         private System.Windows.Forms.TextBox greatestTextBox;
-        private System.Windows.Forms.TextBox leastTextBox;
         private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.ColumnHeader yearCH;
         private System.Windows.Forms.ColumnHeader popCH;
         private System.Windows.Forms.ColumnHeader increaseCH;
+        private System.Windows.Forms.TextBox leastTextBox;
     }
 }
 

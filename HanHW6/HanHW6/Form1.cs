@@ -29,7 +29,7 @@ namespace HanHW6
 
         private void Display(List<int> numberList)
         {
-            int increase = 0;
+            int increase;
             // Variables to iterate
             int indexNumber = 1;
             int startYear = 1950;
@@ -38,31 +38,46 @@ namespace HanHW6
             int[,] array2D = new int[ROWS, COLS];
             listView.View = View.Details;
             listView.FullRowSelect = true;
+            int i = 0;
+            int max = 0;
+            int maxYear = array2D[0, 2];
+            int min = 0;
+            int minYear = array2D[0, 2];
 
             foreach (int number in numberList)
             {
-                int i = 0;
+                
                 array2D[i, 0] = startYear;
                 ListViewItem lvi = new ListViewItem(array2D[i, 0].ToString());
                 startYear++;
                 array2D[i, 1] = number;
                 lvi.SubItems.Add(array2D[i, 1].ToString());
-                i++;
-
                 if (indexNumber < 41)
                 {
                     increase = numberList[indexNumber] - numberList[indexNumber - 1];
                     array2D[i, 2] = increase;
                     lvi.SubItems.Add(array2D[i, 2].ToString());
+                    if (max < array2D[i, 2])
+                    {
+                        max = array2D[i, 2];
+                        
+                        maxYear = array2D[i, 0];
+                    }
+                    else if (min > increase)
+                    {
+                        min = increase;
+                    }
+                    
+
                     indexNumber++;
                 }
+                i++;
                 listView.Items.Add(lvi);
             }
-
-            int max = array2D.Cast<int>().Max();
-            greatestTextBox.Text = max.ToString();
-            int min = array2D.Cast<int>().Min();
+            int indexxx = Array.IndexOf(array2D, maxYear);
+            greatestTextBox.Text = indexxx.ToString();
             leastTextBox.Text = min.ToString();
+            
         }
 
         private void ReadNumber(List<int> numberList)
@@ -126,8 +141,7 @@ namespace HanHW6
                 // Create variables and an array to hold the numbers.
                 List<int> numberList = new List<int>();
                 double average;
-                int greatest;
-                int least;
+               
 
                 // Call methods to calculate values.
                 ReadNumber(numberList);
@@ -135,7 +149,6 @@ namespace HanHW6
                 average = Average(numberList);
                 // Take the average and round to two decimal places and output to the Textbox control.
                 annualChangeTextBox.Text = Math.Round(average, 2).ToString();
-
             }
             catch (Exception ex)
             {
