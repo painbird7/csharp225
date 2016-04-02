@@ -29,55 +29,65 @@ namespace HanHW6
 
         private void Display(List<int> numberList)
         {
-            int increase;
-            // Variables to iterate
-            int indexNumber = 1;
-            int startYear = 1950;
-            const int ROWS = 41;
-            const int COLS = 3;
-            int[,] array2D = new int[ROWS, COLS];
+            // Declare and initialize variables.
+            int increase = 0, startYear = 1950, max, maxIndex, maxYear, min, minIndex, minYear;
+            
+            // Change ListView options.
             listView.View = View.Details;
             listView.FullRowSelect = true;
-            int i = 0;
-            int max = 0;
-            int maxYear = array2D[0, 2];
-            int min = 0;
-            int minYear = array2D[0, 2];
 
-            foreach (int number in numberList)
+            // Declare new lists.
+            List<int> yearList = new List<int>();
+            List<int> increaseList = new List<int>();
+
+            for (int n = 0; n < numberList.Count; n++)
             {
-                
-                array2D[i, 0] = startYear;
-                ListViewItem lvi = new ListViewItem(array2D[i, 0].ToString());
-                startYear++;
-                array2D[i, 1] = number;
-                lvi.SubItems.Add(array2D[i, 1].ToString());
-                if (indexNumber < 41)
-                {
-                    increase = numberList[indexNumber] - numberList[indexNumber - 1];
-                    array2D[i, 2] = increase;
-                    lvi.SubItems.Add(array2D[i, 2].ToString());
-                    if (max < array2D[i, 2])
-                    {
-                        max = array2D[i, 2];
-                        
-                        maxYear = array2D[i, 0];
-                    }
-                    else if (min > increase)
-                    {
-                        min = increase;
-                    }
-                    
+                // Add 1950 to yearList and initialize new ListViewItem for listView.
+                yearList.Add(startYear);
+                ListViewItem lvi = new ListViewItem(yearList[n].ToString());
 
-                    indexNumber++;
+                // Increase 1950 by 1 on each iteration.
+                startYear++;
+                
+                // Add numberList to ListViewItem.
+                lvi.SubItems.Add(numberList[n].ToString());
+
+                // If statements to prevent index error while calculating increase value.
+                if (n == 0)
+                {
+                    // Add 0 to increaseList and ListViewItem
+                    increaseList.Add(increase);
+                    lvi.SubItems.Add(increaseList[n].ToString());
                 }
-                i++;
+                else if (n > 0 && n < 41)
+                {
+                    // Do the same as above main if statement but different calculation for increase while n is greater than 0 and less than 41.
+                    increase = numberList[n] - numberList[n - 1];
+                    increaseList.Add(increase);
+                    lvi.SubItems.Add(increaseList[n].ToString());
+                }
+                else if (n == 41)
+                {
+                    increase = numberList[n - 1] - numberList[n - 2];
+                    increaseList.Add(increase);
+                    lvi.SubItems.Add(increaseList[n - 1].ToString());
+                }
+                // Add ListItemView to listView
                 listView.Items.Add(lvi);
             }
-            int indexxx = Array.IndexOf(array2D, maxYear);
-            greatestTextBox.Text = indexxx.ToString();
-            leastTextBox.Text = min.ToString();
-            
+            // Find max and min values using LINQ methods.
+            max = increaseList.Max();
+            min = increaseList.Where(f => f > 0).Min();
+
+            // Find index number of max and min values in increaseList and utilize them to find respective years.
+            maxIndex = increaseList.IndexOf(max);
+            maxYear = yearList[maxIndex];
+            minIndex = increaseList.IndexOf(min);
+            minYear = yearList[minIndex];
+
+            // Display findings in textbox controls.
+            greatestTextBox.Text = maxYear.ToString();
+            leastTextBox.Text = minYear.ToString();
         }
 
         private void ReadNumber(List<int> numberList)
@@ -137,16 +147,18 @@ namespace HanHW6
         {
             try
             {
+                // Call ClearAll method.
                 ClearAll();
-                // Create variables and an array to hold the numbers.
+
+                // Initialize a new list and declare average.
                 List<int> numberList = new List<int>();
                 double average;
                
-
-                // Call methods to calculate values.
+                // Call methods.
                 ReadNumber(numberList);
                 Display(numberList);
                 average = Average(numberList);
+                
                 // Take the average and round to two decimal places and output to the Textbox control.
                 annualChangeTextBox.Text = Math.Round(average, 2).ToString();
             }
