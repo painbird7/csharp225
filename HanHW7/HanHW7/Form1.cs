@@ -79,20 +79,21 @@ namespace HanHW7
             totalSalesTextBox.Text = totalSales.ToString("C");
         }
 
-        private void PerformCalculation(int index, string name)
+        private void PerformCalculation(int index)
         {
             if (softDrinks[index].quantityInStock != 0)
             {
                 softDrinks[index].quantityInStock -= 1;
                 totalQty += 1;
                 totalSales += softDrinks[index].price;
-            }
-            else
-            {
-                List<Label> qtyLabels = new List<Label>() { colaQtyLabel, lemonLimeQtyLabel, rootBeerQtyLabel, grapeSodaQtyLabel, creamSodaQtyLabel };
-                qtyLabels[index].Text = "Out of Stock";
-                qtyLabels[index].Font = new Font(qtyLabels[index].Font, FontStyle.Bold);
-                qtyLabels[index].ForeColor = System.Drawing.Color.Red;
+
+                if (softDrinks[index].quantityInStock == 0)
+                {
+                    List<Label> qtyLabels = new List<Label>() { colaQtyLabel, lemonLimeQtyLabel, rootBeerQtyLabel, grapeSodaQtyLabel, creamSodaQtyLabel };
+                    qtyLabels[index].Text = "Out of Stock";
+                    qtyLabels[index].Font = new Font(qtyLabels[index].Font, FontStyle.Bold);
+                    qtyLabels[index].ForeColor = System.Drawing.Color.Red;
+                }
             }
         }
 
@@ -113,26 +114,26 @@ namespace HanHW7
                 {
                     case "colaPictureBox":
                         index = 0;
-                        name = "Cola";
+                        
                         break;
                     case "lemonLimePictureBox":
                         index = 1;
-                        name = "Lemon Lime";
+                        
                         break;
                     case "rootBeerPictureBox":
                         index = 2;
-                        name = "Root Beer";
+                        
                         break;
                     case "grapeSodaPictureBox":
                         index = 3;
-                        name = "Grape Soda";
+                        
                         break;
                     case "creamSodaPictureBox":
                         index = 4;
-                        name = "Cream Soda";
+                        
                         break;
                 }
-                PerformCalculation(index, name);
+                PerformCalculation(index);
                 UpdateTextBox();
             }
         }
