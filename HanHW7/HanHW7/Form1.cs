@@ -105,7 +105,7 @@ namespace HanHW7
         private void PictureBoxClick(object sender, EventArgs e)
         {
             int index = 0;
-            string name = null;
+            
             if (sender is PictureBox)
             {
                 string sodaName = ((PictureBox)sender).Name;
@@ -113,24 +113,19 @@ namespace HanHW7
                 switch (sodaName)
                 {
                     case "colaPictureBox":
-                        index = 0;
-                        
+                        index = 0;            
                         break;
                     case "lemonLimePictureBox":
                         index = 1;
-                        
                         break;
                     case "rootBeerPictureBox":
                         index = 2;
-                        
                         break;
                     case "grapeSodaPictureBox":
                         index = 3;
-                        
                         break;
                     case "creamSodaPictureBox":
                         index = 4;
-                        
                         break;
                 }
                 PerformCalculation(index);
