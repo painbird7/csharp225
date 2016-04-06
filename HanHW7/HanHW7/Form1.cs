@@ -18,6 +18,7 @@ namespace HanHW7
     }
     public partial class Form1 : Form
     {
+        // Variables and initialze an array of five Drink objects.
         const int ARRAY_SIZE = 5;
         const int START_UP_QTY = 20;
         Drink[] softDrinks = new Drink[ARRAY_SIZE];
@@ -34,9 +35,11 @@ namespace HanHW7
 
         private void StartUp()
         {
+            // Iterate through softDrinks and assign 20.
             for (int index = 0; index < ARRAY_SIZE; index++)
             {
                 softDrinks[index].quantityInStock = START_UP_QTY;
+
                 if (index > 2)
                 {
                     // Price for Grape Soda and Cream Soda.
@@ -76,38 +79,21 @@ namespace HanHW7
             totalSalesTextBox.Text = totalSales.ToString("C");
         }
 
-        private int GetIndex(string sodaName)
+        private void PerformCalculation(int index, string name)
         {
-            // Initialize variable.
-            int index = 0;
-            
-            // Compare picture box control's name and return index value.
-            switch (sodaName)
+            if (softDrinks[index].quantityInStock != 0)
             {
-                case "colaPictureBox":
-                    index = 0;
-                    break;
-                case "lemonLimePictureBox":
-                    index = 1;
-                    break;
-                case "rootBeerPictureBox":
-                    index = 2;
-                    break;
-                case "grapeSodaPictureBox":
-                    index = 3;
-                    break;
-                case "creamSodaPictureBox":
-                    index = 4;
-                    break;
+                softDrinks[index].quantityInStock -= 1;
+                totalQty += 1;
+                totalSales += softDrinks[index].price;
             }
-            return index;
-        }
-
-        private void PerformCalculation(int index)
-        {
-            softDrinks[index].quantityInStock -= 1;
-            totalQty += 1;
-            totalSales += softDrinks[index].price;
+            else
+            {
+                List<Label> qtyLabels = new List<Label>() { colaQtyLabel, lemonLimeQtyLabel, rootBeerQtyLabel, grapeSodaQtyLabel, creamSodaQtyLabel };
+                qtyLabels[index].Text = "Out of Stock";
+                qtyLabels[index].Font = new Font(qtyLabels[index].Font, FontStyle.Bold);
+                qtyLabels[index].ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -115,16 +101,40 @@ namespace HanHW7
             this.Close();
         }
 
-        private void colaPictureBox_Click(object sender, EventArgs e)
+        private void PictureBoxClick(object sender, EventArgs e)
         {
             int index = 0;
-            PictureBox sodaType = (PictureBox)sender;
-            string sodaName = sodaType.Name;
-            GetIndex(sodaName);
-            PerformCalculation(index);
-            UpdateTextBox();
-
-
+            string name = null;
+            if (sender is PictureBox)
+            {
+                string sodaName = ((PictureBox)sender).Name;
+                
+                switch (sodaName)
+                {
+                    case "colaPictureBox":
+                        index = 0;
+                        name = "Cola";
+                        break;
+                    case "lemonLimePictureBox":
+                        index = 1;
+                        name = "Lemon Lime";
+                        break;
+                    case "rootBeerPictureBox":
+                        index = 2;
+                        name = "Root Beer";
+                        break;
+                    case "grapeSodaPictureBox":
+                        index = 3;
+                        name = "Grape Soda";
+                        break;
+                    case "creamSodaPictureBox":
+                        index = 4;
+                        name = "Cream Soda";
+                        break;
+                }
+                PerformCalculation(index, name);
+                UpdateTextBox();
+            }
         }
     }
 }

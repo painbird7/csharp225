@@ -37,27 +37,27 @@
             this.colaPanel = new System.Windows.Forms.Panel();
             this.colaPriceTextBox = new System.Windows.Forms.TextBox();
             this.colaQtyTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.colaQtyLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lemonLimePanel = new System.Windows.Forms.Panel();
             this.lemonLimePriceTextBox = new System.Windows.Forms.TextBox();
             this.lemonLimeQtyTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lemonLimeQtyLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.rootBeerPanel = new System.Windows.Forms.Panel();
             this.rootBeerPriceTextBox = new System.Windows.Forms.TextBox();
             this.rootBeerQtyTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.rootBeerQtyLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.grapeSodaPanel = new System.Windows.Forms.Panel();
             this.grapeSodaPriceTextBox = new System.Windows.Forms.TextBox();
             this.grapeSodaQtyTextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.grapeSodaQtyLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.creamSodaPanel = new System.Windows.Forms.Panel();
             this.creamSodaPriceTextBox = new System.Windows.Forms.TextBox();
             this.creamSodaQtyTextBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.creamSodaQtyLabel = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.totalPanel = new System.Windows.Forms.Panel();
             this.totalQuantityTextBox = new System.Windows.Forms.TextBox();
@@ -88,7 +88,7 @@
             this.colaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.colaPictureBox.TabIndex = 0;
             this.colaPictureBox.TabStop = false;
-            this.colaPictureBox.Click += new System.EventHandler(this.colaPictureBox_Click);
+            this.colaPictureBox.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // lemonLimePictureBox
             // 
@@ -100,6 +100,7 @@
             this.lemonLimePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.lemonLimePictureBox.TabIndex = 1;
             this.lemonLimePictureBox.TabStop = false;
+            this.lemonLimePictureBox.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // rootBeerPictureBox
             // 
@@ -111,6 +112,7 @@
             this.rootBeerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.rootBeerPictureBox.TabIndex = 2;
             this.rootBeerPictureBox.TabStop = false;
+            this.rootBeerPictureBox.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // creamSodaPictureBox
             // 
@@ -122,6 +124,7 @@
             this.creamSodaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.creamSodaPictureBox.TabIndex = 3;
             this.creamSodaPictureBox.TabStop = false;
+            this.creamSodaPictureBox.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // grapeSodaPictureBox
             // 
@@ -133,13 +136,14 @@
             this.grapeSodaPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.grapeSodaPictureBox.TabIndex = 4;
             this.grapeSodaPictureBox.TabStop = false;
+            this.grapeSodaPictureBox.Click += new System.EventHandler(this.PictureBoxClick);
             // 
             // colaPanel
             // 
             this.colaPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.colaPanel.Controls.Add(this.colaPriceTextBox);
             this.colaPanel.Controls.Add(this.colaQtyTextBox);
-            this.colaPanel.Controls.Add(this.label2);
+            this.colaPanel.Controls.Add(this.colaQtyLabel);
             this.colaPanel.Controls.Add(this.label1);
             this.colaPanel.Controls.Add(this.colaPictureBox);
             this.colaPanel.Location = new System.Drawing.Point(12, 13);
@@ -168,14 +172,14 @@
             this.colaQtyTextBox.TabIndex = 3;
             this.colaQtyTextBox.TabStop = false;
             // 
-            // label2
+            // colaQtyLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Quantity in Stock:";
+            this.colaQtyLabel.AutoSize = true;
+            this.colaQtyLabel.Location = new System.Drawing.Point(13, 82);
+            this.colaQtyLabel.Name = "colaQtyLabel";
+            this.colaQtyLabel.Size = new System.Drawing.Size(108, 17);
+            this.colaQtyLabel.TabIndex = 2;
+            this.colaQtyLabel.Text = "Quantity in Stock:";
             // 
             // label1
             // 
@@ -191,7 +195,7 @@
             this.lemonLimePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lemonLimePanel.Controls.Add(this.lemonLimePriceTextBox);
             this.lemonLimePanel.Controls.Add(this.lemonLimeQtyTextBox);
-            this.lemonLimePanel.Controls.Add(this.label3);
+            this.lemonLimePanel.Controls.Add(this.lemonLimeQtyLabel);
             this.lemonLimePanel.Controls.Add(this.label4);
             this.lemonLimePanel.Controls.Add(this.lemonLimePictureBox);
             this.lemonLimePanel.Location = new System.Drawing.Point(224, 13);
@@ -220,14 +224,14 @@
             this.lemonLimeQtyTextBox.TabIndex = 3;
             this.lemonLimeQtyTextBox.TabStop = false;
             // 
-            // label3
+            // lemonLimeQtyLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Quantity in Stock:";
+            this.lemonLimeQtyLabel.AutoSize = true;
+            this.lemonLimeQtyLabel.Location = new System.Drawing.Point(13, 82);
+            this.lemonLimeQtyLabel.Name = "lemonLimeQtyLabel";
+            this.lemonLimeQtyLabel.Size = new System.Drawing.Size(108, 17);
+            this.lemonLimeQtyLabel.TabIndex = 2;
+            this.lemonLimeQtyLabel.Text = "Quantity in Stock:";
             // 
             // label4
             // 
@@ -243,7 +247,7 @@
             this.rootBeerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rootBeerPanel.Controls.Add(this.rootBeerPriceTextBox);
             this.rootBeerPanel.Controls.Add(this.rootBeerQtyTextBox);
-            this.rootBeerPanel.Controls.Add(this.label5);
+            this.rootBeerPanel.Controls.Add(this.rootBeerQtyLabel);
             this.rootBeerPanel.Controls.Add(this.label6);
             this.rootBeerPanel.Controls.Add(this.rootBeerPictureBox);
             this.rootBeerPanel.Location = new System.Drawing.Point(434, 13);
@@ -272,14 +276,14 @@
             this.rootBeerQtyTextBox.TabIndex = 3;
             this.rootBeerQtyTextBox.TabStop = false;
             // 
-            // label5
+            // rootBeerQtyLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Quantity in Stock:";
+            this.rootBeerQtyLabel.AutoSize = true;
+            this.rootBeerQtyLabel.Location = new System.Drawing.Point(13, 82);
+            this.rootBeerQtyLabel.Name = "rootBeerQtyLabel";
+            this.rootBeerQtyLabel.Size = new System.Drawing.Size(108, 17);
+            this.rootBeerQtyLabel.TabIndex = 2;
+            this.rootBeerQtyLabel.Text = "Quantity in Stock:";
             // 
             // label6
             // 
@@ -295,7 +299,7 @@
             this.grapeSodaPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.grapeSodaPanel.Controls.Add(this.grapeSodaPriceTextBox);
             this.grapeSodaPanel.Controls.Add(this.grapeSodaQtyTextBox);
-            this.grapeSodaPanel.Controls.Add(this.label7);
+            this.grapeSodaPanel.Controls.Add(this.grapeSodaQtyLabel);
             this.grapeSodaPanel.Controls.Add(this.label8);
             this.grapeSodaPanel.Controls.Add(this.grapeSodaPictureBox);
             this.grapeSodaPanel.Location = new System.Drawing.Point(12, 155);
@@ -324,14 +328,14 @@
             this.grapeSodaQtyTextBox.TabIndex = 3;
             this.grapeSodaQtyTextBox.TabStop = false;
             // 
-            // label7
+            // grapeSodaQtyLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 82);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 17);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Quantity in Stock:";
+            this.grapeSodaQtyLabel.AutoSize = true;
+            this.grapeSodaQtyLabel.Location = new System.Drawing.Point(13, 82);
+            this.grapeSodaQtyLabel.Name = "grapeSodaQtyLabel";
+            this.grapeSodaQtyLabel.Size = new System.Drawing.Size(108, 17);
+            this.grapeSodaQtyLabel.TabIndex = 2;
+            this.grapeSodaQtyLabel.Text = "Quantity in Stock:";
             // 
             // label8
             // 
@@ -347,7 +351,7 @@
             this.creamSodaPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.creamSodaPanel.Controls.Add(this.creamSodaPriceTextBox);
             this.creamSodaPanel.Controls.Add(this.creamSodaQtyTextBox);
-            this.creamSodaPanel.Controls.Add(this.label9);
+            this.creamSodaPanel.Controls.Add(this.creamSodaQtyLabel);
             this.creamSodaPanel.Controls.Add(this.label10);
             this.creamSodaPanel.Controls.Add(this.creamSodaPictureBox);
             this.creamSodaPanel.Location = new System.Drawing.Point(224, 155);
@@ -376,14 +380,14 @@
             this.creamSodaQtyTextBox.TabIndex = 3;
             this.creamSodaQtyTextBox.TabStop = false;
             // 
-            // label9
+            // creamSodaQtyLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 82);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 17);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Quantity in Stock:";
+            this.creamSodaQtyLabel.AutoSize = true;
+            this.creamSodaQtyLabel.Location = new System.Drawing.Point(13, 82);
+            this.creamSodaQtyLabel.Name = "creamSodaQtyLabel";
+            this.creamSodaQtyLabel.Size = new System.Drawing.Size(108, 17);
+            this.creamSodaQtyLabel.TabIndex = 2;
+            this.creamSodaQtyLabel.Text = "Quantity in Stock:";
             // 
             // label10
             // 
@@ -447,7 +451,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(283, 290);
+            this.exitButton.Location = new System.Drawing.Point(507, 298);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 9;
@@ -501,23 +505,23 @@
         private System.Windows.Forms.PictureBox grapeSodaPictureBox;
         private System.Windows.Forms.Panel colaPanel;
         private System.Windows.Forms.TextBox colaQtyTextBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label colaQtyLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel lemonLimePanel;
         private System.Windows.Forms.TextBox lemonLimeQtyTextBox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lemonLimeQtyLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel rootBeerPanel;
         private System.Windows.Forms.TextBox rootBeerQtyTextBox;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label rootBeerQtyLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel grapeSodaPanel;
         private System.Windows.Forms.TextBox grapeSodaQtyTextBox;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label grapeSodaQtyLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel creamSodaPanel;
         private System.Windows.Forms.TextBox creamSodaQtyTextBox;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label creamSodaQtyLabel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel totalPanel;
         private System.Windows.Forms.TextBox totalSalesTextBox;
