@@ -11,11 +11,13 @@ using System.Windows.Forms;
 
 namespace HanHW7
 {
+    // Declare structure 
     struct Drink
     {
         public int quantityInStock;
         public double price;
     }
+
     public partial class Form1 : Form
     {
         // Variables and initialze an array of five Drink objects.
@@ -24,10 +26,10 @@ namespace HanHW7
         Drink[] softDrinks = new Drink[ARRAY_SIZE];
         int totalQty = 0;
         double totalSales = 0;
-        
-        
+            
         public Form1()
         {
+            // Initial form load, update text boxes.
             InitializeComponent();
             StartUp();
             UpdateTextBox();
@@ -75,18 +77,26 @@ namespace HanHW7
             creamSodaQtyTextBox.Text = softDrinks[4].quantityInStock.ToString();
             creamSodaPriceTextBox.Text = softDrinks[4].price.ToString("C");
 
+            // Total values.
             totalQuantityTextBox.Text = totalQty.ToString();
             totalSalesTextBox.Text = totalSales.ToString("C");
         }
 
         private void PerformCalculation(int index)
         {
+            // If statement to prevent stock number going below 0.
             if (softDrinks[index].quantityInStock != 0)
             {
+                // Subtract 1 from stock
                 softDrinks[index].quantityInStock -= 1;
+                
+                // Add 1 to total quantity
                 totalQty += 1;
+                
+                // Sum total price 
                 totalSales += softDrinks[index].price;
 
+                // Change text of label and color if stock value equals 0.
                 if (softDrinks[index].quantityInStock == 0)
                 {
                     List<Label> qtyLabels = new List<Label>() { colaQtyLabel, lemonLimeQtyLabel, rootBeerQtyLabel, grapeSodaQtyLabel, creamSodaQtyLabel };
@@ -99,6 +109,7 @@ namespace HanHW7
 
         private void exitButton_Click(object sender, EventArgs e)
         {
+            // Close the form.
             this.Close();
         }
 
@@ -106,10 +117,13 @@ namespace HanHW7
         {
             int index = 0;
             
+            // Check if sender is a picturebox control.
             if (sender is PictureBox)
             {
+                // Get picturebox control's name and assign it to sodaName.
                 string sodaName = ((PictureBox)sender).Name;
                 
+                // Switch statement to assign index number to send over to PerformCalculation method.
                 switch (sodaName)
                 {
                     case "colaPictureBox":
@@ -132,5 +146,20 @@ namespace HanHW7
                 UpdateTextBox();
             }
         }
+
+        // Method to change border style to Fixed3D
+        private void ChangeBorderFixed3D(object sender, MouseEventArgs e)
+        {
+            PictureBox soda = (PictureBox)sender;
+            soda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+        }
+
+        // Method to change border style to None
+        private void ChangeBorderNone(object sender, MouseEventArgs e)
+        {
+            PictureBox soda = (PictureBox)sender;
+            soda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        }
+
     }
 }

@@ -89,6 +89,8 @@
             this.colaPictureBox.TabIndex = 0;
             this.colaPictureBox.TabStop = false;
             this.colaPictureBox.Click += new System.EventHandler(this.PictureBoxClick);
+            this.colaPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ChangeBorderFixed3D);
+            this.colaPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ChangeBorderNone);
             // 
             // lemonLimePictureBox
             // 
@@ -101,6 +103,8 @@
             this.lemonLimePictureBox.TabIndex = 1;
             this.lemonLimePictureBox.TabStop = false;
             this.lemonLimePictureBox.Click += new System.EventHandler(this.PictureBoxClick);
+            this.lemonLimePictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ChangeBorderFixed3D);
+            this.lemonLimePictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ChangeBorderNone);
             // 
             // rootBeerPictureBox
             // 
@@ -113,6 +117,8 @@
             this.rootBeerPictureBox.TabIndex = 2;
             this.rootBeerPictureBox.TabStop = false;
             this.rootBeerPictureBox.Click += new System.EventHandler(this.PictureBoxClick);
+            this.rootBeerPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ChangeBorderFixed3D);
+            this.rootBeerPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ChangeBorderNone);
             // 
             // creamSodaPictureBox
             // 
@@ -125,6 +131,8 @@
             this.creamSodaPictureBox.TabIndex = 3;
             this.creamSodaPictureBox.TabStop = false;
             this.creamSodaPictureBox.Click += new System.EventHandler(this.PictureBoxClick);
+            this.creamSodaPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ChangeBorderFixed3D);
+            this.creamSodaPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ChangeBorderNone);
             // 
             // grapeSodaPictureBox
             // 
@@ -137,6 +145,8 @@
             this.grapeSodaPictureBox.TabIndex = 4;
             this.grapeSodaPictureBox.TabStop = false;
             this.grapeSodaPictureBox.Click += new System.EventHandler(this.PictureBoxClick);
+            this.grapeSodaPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ChangeBorderFixed3D);
+            this.grapeSodaPictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ChangeBorderNone);
             // 
             // colaPanel
             // 
@@ -414,10 +424,10 @@
             // totalQuantityTextBox
             // 
             this.totalQuantityTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.totalQuantityTextBox.Location = new System.Drawing.Point(111, 26);
+            this.totalQuantityTextBox.Location = new System.Drawing.Point(117, 26);
             this.totalQuantityTextBox.Name = "totalQuantityTextBox";
             this.totalQuantityTextBox.ReadOnly = true;
-            this.totalQuantityTextBox.Size = new System.Drawing.Size(58, 18);
+            this.totalQuantityTextBox.Size = new System.Drawing.Size(52, 18);
             this.totalQuantityTextBox.TabIndex = 5;
             this.totalQuantityTextBox.TabStop = false;
             // 
@@ -474,6 +484,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Drink Vending Machine";
             ((System.ComponentModel.ISupportInitialize)(this.colaPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lemonLimePictureBox)).EndInit();
