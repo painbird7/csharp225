@@ -359,7 +359,7 @@
             // creamSodaPriceTextBox
             // 
             this.creamSodaPriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.creamSodaPriceTextBox.Location = new System.Drawing.Point(132, 34);
+            this.creamSodaPriceTextBox.Location = new System.Drawing.Point(132, 16);
             this.creamSodaPriceTextBox.Name = "creamSodaPriceTextBox";
             this.creamSodaPriceTextBox.ReadOnly = true;
             this.creamSodaPriceTextBox.Size = new System.Drawing.Size(37, 18);
@@ -369,7 +369,7 @@
             // creamSodaQtyTextBox
             // 
             this.creamSodaQtyTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.creamSodaQtyTextBox.Location = new System.Drawing.Point(117, 79);
+            this.creamSodaQtyTextBox.Location = new System.Drawing.Point(127, 82);
             this.creamSodaQtyTextBox.Name = "creamSodaQtyTextBox";
             this.creamSodaQtyTextBox.ReadOnly = true;
             this.creamSodaQtyTextBox.Size = new System.Drawing.Size(52, 18);
