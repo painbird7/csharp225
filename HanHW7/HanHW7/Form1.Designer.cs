@@ -61,7 +61,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.totalPanel = new System.Windows.Forms.Panel();
             this.totalQuantityTextBox = new System.Windows.Forms.TextBox();
-            this.totalTextBox = new System.Windows.Forms.TextBox();
+            this.totalSalesTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
@@ -151,7 +151,7 @@
             // colaPriceTextBox
             // 
             this.colaPriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.colaPriceTextBox.Location = new System.Drawing.Point(132, 34);
+            this.colaPriceTextBox.Location = new System.Drawing.Point(140, 37);
             this.colaPriceTextBox.Name = "colaPriceTextBox";
             this.colaPriceTextBox.ReadOnly = true;
             this.colaPriceTextBox.Size = new System.Drawing.Size(37, 18);
@@ -161,7 +161,7 @@
             // colaQtyTextBox
             // 
             this.colaQtyTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.colaQtyTextBox.Location = new System.Drawing.Point(117, 79);
+            this.colaQtyTextBox.Location = new System.Drawing.Point(127, 82);
             this.colaQtyTextBox.Name = "colaQtyTextBox";
             this.colaQtyTextBox.ReadOnly = true;
             this.colaQtyTextBox.Size = new System.Drawing.Size(52, 18);
@@ -203,7 +203,7 @@
             // lemonLimePriceTextBox
             // 
             this.lemonLimePriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lemonLimePriceTextBox.Location = new System.Drawing.Point(132, 34);
+            this.lemonLimePriceTextBox.Location = new System.Drawing.Point(140, 37);
             this.lemonLimePriceTextBox.Name = "lemonLimePriceTextBox";
             this.lemonLimePriceTextBox.ReadOnly = true;
             this.lemonLimePriceTextBox.Size = new System.Drawing.Size(37, 18);
@@ -213,7 +213,7 @@
             // lemonLimeQtyTextBox
             // 
             this.lemonLimeQtyTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lemonLimeQtyTextBox.Location = new System.Drawing.Point(117, 79);
+            this.lemonLimeQtyTextBox.Location = new System.Drawing.Point(127, 82);
             this.lemonLimeQtyTextBox.Name = "lemonLimeQtyTextBox";
             this.lemonLimeQtyTextBox.ReadOnly = true;
             this.lemonLimeQtyTextBox.Size = new System.Drawing.Size(52, 18);
@@ -255,7 +255,7 @@
             // rootBeerPriceTextBox
             // 
             this.rootBeerPriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rootBeerPriceTextBox.Location = new System.Drawing.Point(132, 34);
+            this.rootBeerPriceTextBox.Location = new System.Drawing.Point(140, 37);
             this.rootBeerPriceTextBox.Name = "rootBeerPriceTextBox";
             this.rootBeerPriceTextBox.ReadOnly = true;
             this.rootBeerPriceTextBox.Size = new System.Drawing.Size(37, 18);
@@ -265,7 +265,7 @@
             // rootBeerQtyTextBox
             // 
             this.rootBeerQtyTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rootBeerQtyTextBox.Location = new System.Drawing.Point(117, 79);
+            this.rootBeerQtyTextBox.Location = new System.Drawing.Point(127, 82);
             this.rootBeerQtyTextBox.Name = "rootBeerQtyTextBox";
             this.rootBeerQtyTextBox.ReadOnly = true;
             this.rootBeerQtyTextBox.Size = new System.Drawing.Size(52, 18);
@@ -307,7 +307,7 @@
             // grapeSodaPriceTextBox
             // 
             this.grapeSodaPriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.grapeSodaPriceTextBox.Location = new System.Drawing.Point(132, 34);
+            this.grapeSodaPriceTextBox.Location = new System.Drawing.Point(140, 37);
             this.grapeSodaPriceTextBox.Name = "grapeSodaPriceTextBox";
             this.grapeSodaPriceTextBox.ReadOnly = true;
             this.grapeSodaPriceTextBox.Size = new System.Drawing.Size(37, 18);
@@ -317,7 +317,7 @@
             // grapeSodaQtyTextBox
             // 
             this.grapeSodaQtyTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.grapeSodaQtyTextBox.Location = new System.Drawing.Point(117, 79);
+            this.grapeSodaQtyTextBox.Location = new System.Drawing.Point(127, 82);
             this.grapeSodaQtyTextBox.Name = "grapeSodaQtyTextBox";
             this.grapeSodaQtyTextBox.ReadOnly = true;
             this.grapeSodaQtyTextBox.Size = new System.Drawing.Size(52, 18);
@@ -359,7 +359,7 @@
             // creamSodaPriceTextBox
             // 
             this.creamSodaPriceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.creamSodaPriceTextBox.Location = new System.Drawing.Point(132, 16);
+            this.creamSodaPriceTextBox.Location = new System.Drawing.Point(140, 37);
             this.creamSodaPriceTextBox.Name = "creamSodaPriceTextBox";
             this.creamSodaPriceTextBox.ReadOnly = true;
             this.creamSodaPriceTextBox.Size = new System.Drawing.Size(37, 18);
@@ -398,7 +398,7 @@
             // 
             this.totalPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalPanel.Controls.Add(this.totalQuantityTextBox);
-            this.totalPanel.Controls.Add(this.totalTextBox);
+            this.totalPanel.Controls.Add(this.totalSalesTextBox);
             this.totalPanel.Controls.Add(this.label11);
             this.totalPanel.Controls.Add(this.label12);
             this.totalPanel.Location = new System.Drawing.Point(434, 155);
@@ -410,22 +410,22 @@
             // totalQuantityTextBox
             // 
             this.totalQuantityTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.totalQuantityTextBox.Location = new System.Drawing.Point(117, 23);
+            this.totalQuantityTextBox.Location = new System.Drawing.Point(111, 26);
             this.totalQuantityTextBox.Name = "totalQuantityTextBox";
             this.totalQuantityTextBox.ReadOnly = true;
-            this.totalQuantityTextBox.Size = new System.Drawing.Size(37, 18);
+            this.totalQuantityTextBox.Size = new System.Drawing.Size(58, 18);
             this.totalQuantityTextBox.TabIndex = 5;
             this.totalQuantityTextBox.TabStop = false;
             // 
-            // totalTextBox
+            // totalSalesTextBox
             // 
-            this.totalTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.totalTextBox.Location = new System.Drawing.Point(117, 79);
-            this.totalTextBox.Name = "totalTextBox";
-            this.totalTextBox.ReadOnly = true;
-            this.totalTextBox.Size = new System.Drawing.Size(52, 18);
-            this.totalTextBox.TabIndex = 3;
-            this.totalTextBox.TabStop = false;
+            this.totalSalesTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.totalSalesTextBox.Location = new System.Drawing.Point(117, 82);
+            this.totalSalesTextBox.Name = "totalSalesTextBox";
+            this.totalSalesTextBox.ReadOnly = true;
+            this.totalSalesTextBox.Size = new System.Drawing.Size(52, 18);
+            this.totalSalesTextBox.TabIndex = 3;
+            this.totalSalesTextBox.TabStop = false;
             // 
             // label11
             // 
@@ -520,7 +520,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel totalPanel;
-        private System.Windows.Forms.TextBox totalTextBox;
+        private System.Windows.Forms.TextBox totalSalesTextBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button exitButton;
