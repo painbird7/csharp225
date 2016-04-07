@@ -9,19 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*  Title: HanHW7 - Drink Vending Machine Simulator
-    Requirement: Create an application that simulates a soft-drink vending machine.  The application should let the user select one of the following soft drinks:
-•Cola ($1.00 each)
-•Root Beer ($1.00 each)
-•Lemon Lime Soda ($1.00 each)
-•Grape Soda ($1.50 each)
-•Cream Soda ($1.50 each)
-
-    Date: 03/28/2016   
+    Requirement: Create an application that simulates a soft-drink vending machine.  The application should let the user select one of five soft drinks. When the application starts, the vending machine will have 20 of each type of soft drink.  Each time the user selects a drink, the application should subtract 1 from the quantity of the selected drink.  It should also update and display the total amount of sales.  If the user selects a drink that is sold out, a message should be displayed indicating so. In the application's code, create a structure that has fields for the following data: Drink name, Drink cost, Number of drinks in machine.
+      The program should create an array of five structure objects.  Each element of the array should keep data for a specific type of soft drink
+    Date: 04/06/2016   
 */
 
 namespace HanHW7
 {
-    // Declare structure 
+    // Declare structure for Drink
     struct Drink
     {
         public int quantityInStock;
@@ -38,7 +33,6 @@ namespace HanHW7
         int totalQty = 0;
         double totalSales = 0;
         
-
         public Form1()
         {
             // Initial form load, update text boxes.
@@ -56,7 +50,7 @@ namespace HanHW7
             softDrinks[3].drinkName = "Grape Soda";
             softDrinks[4].drinkName = "Cream Soda";
 
-            // Iterate through softDrinks and assign 20 for start quantity.
+            // Iterate through softDrinks and assign 20 for start quantity and 1 for prices.
             for (int index = 0; index < ARRAY_SIZE; index++)
             {
                 softDrinks[index].quantityInStock = START_UP_QTY;
@@ -67,7 +61,6 @@ namespace HanHW7
                     // Price for Grape Soda and Cream Soda.
                     softDrinks[index].price = 1.5;
                 }
-                
             }
         }
 
@@ -113,30 +106,34 @@ namespace HanHW7
                 // Sum total price 
                 totalSales += softDrinks[index].price;
 
-                
                 // Change text of label and color if stock value equals 0.
                 if (softDrinks[index].quantityInStock == 0)
                 {
+                    // Variable for listbox.
                     string OOSLabel = "Out of Stock Items:";
+
+                    // Get drink name based on index number.
                     string OOSName = softDrinks[index].drinkName;
+
+                    // Add OOSLabel in the beginning of listbox if it doesn't exist.
                     int result = outOfStockListBox.FindString(OOSLabel, -1);
                     if (result == -1)
                     {
                         outOfStockListBox.Items.Add(OOSLabel);
                     }
-                   
+                    
+                    // Add name of soda that is out of stock to listbox.
                     outOfStockListBox.Items.Add(OOSName);
                     
-                    
+                    // Create new lists to work with labels and textboxes.
                     List<Label> qtyLabels = new List<Label>() { colaQtyLabel, lemonLimeQtyLabel, rootBeerQtyLabel, grapeSodaQtyLabel, creamSodaQtyLabel };
                     List<TextBox> qtyTextBoxes = new List<TextBox>() { colaQtyTextBox, lemonLimeQtyTextBox, rootBeerQtyTextBox, grapeSodaQtyTextBox, creamSodaQtyTextBox};
+
+                    // Change label and textbox control properties.
                     qtyLabels[index].Text = "Out of Stock";
                     qtyLabels[index].Font = new Font(qtyLabels[index].Font, FontStyle.Bold);
                     qtyLabels[index].ForeColor = System.Drawing.Color.Red;
                     qtyTextBoxes[index].Hide();
-
-                    
-
                 }
             }
         }
@@ -176,6 +173,8 @@ namespace HanHW7
                         index = 4;
                         break;
                 }
+                
+                // Call methods.
                 PerformCalculation(index);
                 UpdateTextBox();
             }
@@ -194,6 +193,5 @@ namespace HanHW7
             PictureBox soda = (PictureBox)sender;
             soda.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
-        
     }
 }
