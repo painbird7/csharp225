@@ -8,6 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*  Title: HanHW7 - Drink Vending Machine Simulator
+    Requirement: Create an application that simulates a soft-drink vending machine.  The application should let the user select one of the following soft drinks:
+•Cola ($1.00 each)
+•Root Beer ($1.00 each)
+•Lemon Lime Soda ($1.00 each)
+•Grape Soda ($1.50 each)
+•Cream Soda ($1.50 each)
+
+    Date: 03/28/2016   
+*/
 
 namespace HanHW7
 {
@@ -16,6 +26,7 @@ namespace HanHW7
     {
         public int quantityInStock;
         public double price;
+        public string drinkName;
     }
 
     public partial class Form1 : Form
@@ -26,7 +37,8 @@ namespace HanHW7
         Drink[] softDrinks = new Drink[ARRAY_SIZE];
         int totalQty = 0;
         double totalSales = 0;
-            
+        
+
         public Form1()
         {
             // Initial form load, update text boxes.
@@ -37,21 +49,25 @@ namespace HanHW7
 
         private void StartUp()
         {
-            // Iterate through softDrinks and assign 20.
+            // Assign drink names.
+            softDrinks[0].drinkName = "Cola";
+            softDrinks[1].drinkName = "Lemon Lime";
+            softDrinks[2].drinkName = "Root Beer";
+            softDrinks[3].drinkName = "Grape Soda";
+            softDrinks[4].drinkName = "Cream Soda";
+
+            // Iterate through softDrinks and assign 20 for start quantity.
             for (int index = 0; index < ARRAY_SIZE; index++)
             {
                 softDrinks[index].quantityInStock = START_UP_QTY;
+                softDrinks[index].price = 1.0;
 
                 if (index > 2)
                 {
                     // Price for Grape Soda and Cream Soda.
                     softDrinks[index].price = 1.5;
                 }
-                else
-                {
-                    // Price for Cola, Lemon Lime, and Root Beer.
-                    softDrinks[index].price = 1.0;
-                }
+                
             }
         }
 
@@ -84,6 +100,7 @@ namespace HanHW7
 
         private void PerformCalculation(int index)
         {
+            
             // If statement to prevent stock number going below 0.
             if (softDrinks[index].quantityInStock != 0)
             {
@@ -96,13 +113,30 @@ namespace HanHW7
                 // Sum total price 
                 totalSales += softDrinks[index].price;
 
+                
                 // Change text of label and color if stock value equals 0.
                 if (softDrinks[index].quantityInStock == 0)
                 {
+                    string OOSLabel = "Out of Stock Items:";
+                    string OOSName = softDrinks[index].drinkName;
+                    int result = outOfStockListBox.FindString(OOSLabel, -1);
+                    if (result == -1)
+                    {
+                        outOfStockListBox.Items.Add(OOSLabel);
+                    }
+                   
+                    outOfStockListBox.Items.Add(OOSName);
+                    
+                    
                     List<Label> qtyLabels = new List<Label>() { colaQtyLabel, lemonLimeQtyLabel, rootBeerQtyLabel, grapeSodaQtyLabel, creamSodaQtyLabel };
+                    List<TextBox> qtyTextBoxes = new List<TextBox>() { colaQtyTextBox, lemonLimeQtyTextBox, rootBeerQtyTextBox, grapeSodaQtyTextBox, creamSodaQtyTextBox};
                     qtyLabels[index].Text = "Out of Stock";
                     qtyLabels[index].Font = new Font(qtyLabels[index].Font, FontStyle.Bold);
                     qtyLabels[index].ForeColor = System.Drawing.Color.Red;
+                    qtyTextBoxes[index].Hide();
+
+                    
+
                 }
             }
         }
@@ -160,6 +194,6 @@ namespace HanHW7
             PictureBox soda = (PictureBox)sender;
             soda.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
-
+        
     }
 }
