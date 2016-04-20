@@ -12,11 +12,11 @@ namespace HanHW9
         private string _name, _address, _phone;
 
         // Constructor
-        public Person()
+        public Person(string _name, string _address, string _phone)
         {
-            _name = "";
-            _address = "";
-            _phone = "";
+            Name = _name;
+            Address = _address;
+            Phone = _phone;
         }
 
         // Name property

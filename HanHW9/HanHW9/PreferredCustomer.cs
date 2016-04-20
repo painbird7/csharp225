@@ -10,6 +10,7 @@ namespace HanHW9
     {
         private decimal _purchaseAmount;
         private decimal _discount;
+        private string _emailAddress;
 
         // Constructor
         public PreferredCustomer()
