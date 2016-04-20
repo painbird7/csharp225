@@ -9,9 +9,7 @@ namespace HanHW9
     class Person
     {
         // Fields
-        private string _name;
-        private string _address;
-        private string _phone;
+        private string _name, _address, _phone;
 
         // Constructor
         public Person()

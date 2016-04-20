@@ -9,21 +9,27 @@ namespace HanHW9
     class Customer : Person
     {
         // Fields
-        private int _customerNumber;
+        private string _customerNumber;
+        private bool _mailing;
 
         // Constructor
         public Customer()
         {
-            _customerNumber = 0;
+            _customerNumber = "";
         }
 
         // CustomerNumber property
-        public int CustomerNumber
+        public string CustomerNumber
         {
             get { return _customerNumber; }
             set { _customerNumber = value; }
         }
 
         // 
+        public bool Mailing
+        {
+            get { return _mailing; }
+            set { _mailing = value; }
+        }
     }
 }
