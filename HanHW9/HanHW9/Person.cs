@@ -6,38 +6,32 @@ using System.Threading.Tasks;
 
 namespace HanHW9
 {
-    class Person
+    public class Person
     {
-        // Fields
-        private string _name, _address, _phone;
-
         // Constructor
-        public Person(string _name, string _address, string _phone)
+        public Person(string name, string address, string phone)
         {
-            Name = _name;
-            Address = _address;
-            Phone = _phone;
+            Name = name;
+            Address = address;
+            Phone = phone;
         }
 
         // Name property
         public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get; set;
         }
-
+       
         // Address property
         public string Address
         {
-            get { return _address; }
-            set { _address = value; }
+            get; set;
         }
 
         // Phone property
         public string Phone
         {
-            get { return _phone; }
-            set { _phone = value; }
+            get; set;
         }
     }
 }
