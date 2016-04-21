@@ -8,28 +8,19 @@ namespace HanHW9
 {
     class PreferredCustomer : Customer
     {
+        // Fields
+        private decimal _purchaseAmount;
+        private decimal _discountLevel;
+
         // Constructor
-        public PreferredCustomer(string name, string address, string phone, string customerNumber, bool mailing, decimal purchaseAmount)
+        public PreferredCustomer(string name, string address, string phone, int customerNumber, bool mailing, decimal purchaseAmount)
             : base(name, address, phone, customerNumber, mailing)
         {
-            discountLevel = CalculateDiscountLevel();
+            _purchaseAmount = purchaseAmount;
+            //_discountLevel = CalculateDiscountLevel();
             
         }
 
-        // PurchaseAmount property
         
-
-        // Discount property
-        public decimal discountLevel;
-
-        public decimal CalculateDiscountLevel()
-        {
-            decimal purchaseAmount = 
-            decimal calValue;
-            if ( - 500)
-            {
-
-            }
-        }
     }
 }

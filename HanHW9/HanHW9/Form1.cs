@@ -32,10 +32,10 @@ namespace HanHW9
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            ReadFile();
         }
 
-        private void ReadFile()
+        private void ReadFile(Customer customer)
         {
             try
             {
@@ -50,28 +50,21 @@ namespace HanHW9
                 string line;
                 listView.View = View.Details;
                 listView.FullRowSelect = true;
-                ListViewItem lvi = new ListViewItem();
 
-                
                 while (!inputFile.EndOfStream)
                 {
-                    List<Customer> customer = new List<Customer>();
-
-
-                    customer.base
-
+                    customer.
                     // Read text.
                     line = inputFile.ReadLine();
                     // Split line with ','.
                     string[] tokens = line.Split(delim);
-                    // Add parsed data to object's properties.
-                    
-
+                    ListViewItem lvi = new ListViewItem(tokens[6]);
                     lvi.SubItems.Add(tokens[0]);
                     lvi.SubItems.Add(tokens[1]);
                     lvi.SubItems.Add(tokens[2]);
-
-                    // Add names to listbox.
+                    lvi.SubItems.Add(tokens[3]);
+                    lvi.SubItems.Add(tokens[4]);
+                    lvi.SubItems.Add(tokens[5]);
                     listView.Items.Add(lvi);
                 }
                 inputFile.Close();
@@ -91,14 +84,14 @@ namespace HanHW9
         private void clearButton_Click(object sender, EventArgs e)
         {
             customerNumberTextBox.Clear();
-            purchasedAmountTextBox.Clear();
+            purchaseAmountTextBox.Clear();
             discountLevelTextBox.Clear();
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
+        private void findButton_Click(object sender, EventArgs e)
         {
-            //string customer = customerNumberTextBox.Text;
-            ReadFile();
+            int enteredCustomerNumber = int.Parse(customerNumberTextBox.Text);
+            listView.FindItemWithText(enteredCustomerNumber.ToString());
         }
     }
 }

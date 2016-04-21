@@ -8,30 +8,38 @@ namespace HanHW9
 {
     public class Person
     {
+        // Fields
+        private string _name;
+        private string _address;
+        private string _phone;
+
         // Constructor
         public Person(string name, string address, string phone)
         {
-            Name = name;
-            Address = address;
-            Phone = phone;
+            _name = name;
+            _address = address;
+            _phone = phone;
         }
 
         // Name property
         public string Name
         {
-            get; set;
+            get { return _name; }
+            set { _name = value; }
         }
        
         // Address property
         public string Address
         {
-            get; set;
+            get { return _address; }
+            set { _address = value; }
         }
 
         // Phone property
         public string Phone
         {
-            get; set;
+            get { return _phone; }
+            set { _phone = value; }
         }
     }
 }

@@ -8,24 +8,30 @@ namespace HanHW9
 {
     class Customer : Person
     {
+        // Fields
+        private int _customerNumber;
+        private bool _mailing;
+
         // Constructor
-        public Customer(string name, string address, string phone, string customerNumber, bool mailing) 
+        public Customer(string name, string address, string phone, int customerNumber, bool mailing) 
             : base(name, address, phone)
         {
-            CustomerNumber = customerNumber;
-            Mailing = mailing;
+            _customerNumber = customerNumber;
+            _mailing = mailing;
         }
 
         // CustomerNumber property
-        public string CustomerNumber
+        public int CustomerNumber
         {
-            get; set;
+            get { return _customerNumber; }
+            set { _customerNumber = value; }
         }
 
         // Mailing property
         public bool Mailing
         {
-            get; set;
+            get { return _mailing; }
+            set { _mailing = value; }
         }
     }
 }
