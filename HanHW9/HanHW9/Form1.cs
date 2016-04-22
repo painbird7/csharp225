@@ -24,6 +24,7 @@ namespace HanHW9
     public partial class Form1 : Form
     {
         // Create a list
+        List<PreferredCustomer> customerList = new List<PreferredCustomer>();
         
         public Form1()
         {
@@ -32,11 +33,17 @@ namespace HanHW9
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ReadFile();
+            
         }
 
-        private void ReadFile(Customer customer)
+        private void ReadFile()
         {
+            // Variables to hold input.
+            string name = "", address = "", phone = "";
+            int customerNumber = 0;
+            bool mailing = false;
+            decimal purchaseAmount = 0;
+
             try
             {
                 // Read the text file.
@@ -48,24 +55,27 @@ namespace HanHW9
                 // Delimiter to split string and variable to hold each line of text
                 char[] delim = { ',' };
                 string line;
-                listView.View = View.Details;
-                listView.FullRowSelect = true;
+                
 
                 while (!inputFile.EndOfStream)
                 {
-                    customer.
+                    PreferredCustomer myCustomer = new PreferredCustomer(name, address, phone, customerNumber, mailing, purchaseAmount);
                     // Read text.
                     line = inputFile.ReadLine();
                     // Split line with ','.
                     string[] tokens = line.Split(delim);
-                    ListViewItem lvi = new ListViewItem(tokens[6]);
-                    lvi.SubItems.Add(tokens[0]);
-                    lvi.SubItems.Add(tokens[1]);
-                    lvi.SubItems.Add(tokens[2]);
-                    lvi.SubItems.Add(tokens[3]);
-                    lvi.SubItems.Add(tokens[4]);
-                    lvi.SubItems.Add(tokens[5]);
-                    listView.Items.Add(lvi);
+
+                    myCustomer.Name = tokens[0];
+                    myCustomer.Phone = tokens[1];
+                    myCustomer.Address = tokens[2];
+                    myCustomer.CustomerNumber = int.Parse(tokens[3]);
+                    myCustomer.PurchaseAmount = decimal.Parse(tokens[4]);
+                    myCustomer.Mailing = bool.Parse(tokens[5]);
+                    customerList.Add(myCustomer);
+                    
+
+
+                    
                 }
                 inputFile.Close();
             }
@@ -86,12 +96,40 @@ namespace HanHW9
             customerNumberTextBox.Clear();
             purchaseAmountTextBox.Clear();
             discountLevelTextBox.Clear();
+            listView.Items.Clear();
         }
 
         private void findButton_Click(object sender, EventArgs e)
         {
-            int enteredCustomerNumber = int.Parse(customerNumberTextBox.Text);
-            listView.FindItemWithText(enteredCustomerNumber.ToString());
+            int enteredCustomerNumber;
+            if (int.TryParse(customerNumberTextBox.Text, out enteredCustomerNumber))
+            {
+                ReadFile();
+                int index = customerList.FindIndex(i => i.CustomerNumber == enteredCustomerNumber);
+                if (index != -1)
+                {
+                    // Change listView properties.
+                    listView.View = View.Details;
+                    listView.FullRowSelect = true;
+
+                    
+                    ListViewItem lvi = new ListViewItem(customerList[index].CustomerNumber.ToString());
+                    lvi.SubItems.Add(customerList[index].Name);
+                    lvi.SubItems.Add(customerList[index].Phone);
+                    lvi.SubItems.Add(customerList[index].Address);
+                    lvi.SubItems.Add(customerList[index].Mailing.ToString());
+                    lvi.SubItems.Add(customerList[index].PurchaseAmount.ToString());
+                    listView.Items.Add(lvi);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("The customer number does not exist.");
+                }
+            }
+            
+            
+            
         }
     }
 }

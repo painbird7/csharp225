@@ -20,7 +20,12 @@ namespace HanHW9
             //_discountLevel = CalculateDiscountLevel();
             
         }
-
+        
+        public decimal PurchaseAmount
+        {
+            get { return _purchaseAmount; }
+            set { _purchaseAmount = value; }
+        }
         
     }
 }

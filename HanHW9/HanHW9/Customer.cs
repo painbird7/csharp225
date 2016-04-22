@@ -10,6 +10,7 @@ namespace HanHW9
     {
         // Fields
         private int _customerNumber;
+        private string _email;
         private bool _mailing;
 
         // Constructor
