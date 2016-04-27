@@ -85,9 +85,9 @@ namespace HanHW10
 
         private void FindMax()
         {
-            int max;
+            string max;
             //PopulationDBDataSetTableAdapters.CityTableAdapter cityTableAdapter = new PopulationDBDataSetTableAdapters.CityTableAdapter();
-            max = (int)cityTableAdapter.MaxQuery();
+            max = cityTableAdapter.MaxQuery().ToString();
             highestTextBox.Text = max.ToString();
            
         }
