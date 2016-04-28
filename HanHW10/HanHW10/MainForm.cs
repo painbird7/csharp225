@@ -75,6 +75,10 @@ namespace HanHW10
                 }
             }
             FindMax();
+            FindSum();
+            FindMin();
+            FindAverage();
+            
         }
 
         private void mainAddButton_Click(object sender, EventArgs e)
@@ -85,21 +89,34 @@ namespace HanHW10
 
         private void FindMax()
         {
-            string max;
-            //PopulationDBDataSetTableAdapters.CityTableAdapter cityTableAdapter = new PopulationDBDataSetTableAdapters.CityTableAdapter();
-            max = cityTableAdapter.MaxQuery().ToString();
-            highestTextBox.Text = max.ToString();
-           
+            string maxCity;
+            double max;
+            maxCity = (string)this.cityTableAdapter.MaxCityQuery();
+            max = (double)this.cityTableAdapter.MaxQuery();
+            highestTextBox.Text = maxCity + ", " + max.ToString();
         }
 
         private void FindMin()
         {
-
+            string minCity;
+            double min;
+            minCity = (string)this.cityTableAdapter.MinCityQuery();
+            min = (double)this.cityTableAdapter.MinQuery();
+            lowestTextBox.Text = minCity + ", " + min.ToString();
         }
 
         private void FindSum()
         {
+            double total;
+            total = (double)this.cityTableAdapter.SumQuery();
+            totalTextBox.Text = total.ToString();
+        }
 
+        private void FindAverage()
+        {
+            double average;
+            average = (double)this.cityTableAdapter.AverageQuery();
+            averageTextBox.Text = average.ToString();
         }
     }
 }

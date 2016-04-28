@@ -140,6 +140,7 @@
             this.totalTextBox.Name = "totalTextBox";
             this.totalTextBox.Size = new System.Drawing.Size(179, 25);
             this.totalTextBox.TabIndex = 8;
+            this.totalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // averageTextBox
             // 
@@ -147,20 +148,23 @@
             this.averageTextBox.Name = "averageTextBox";
             this.averageTextBox.Size = new System.Drawing.Size(179, 25);
             this.averageTextBox.TabIndex = 9;
+            this.averageTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // highestTextBox
             // 
-            this.highestTextBox.Location = new System.Drawing.Point(178, 370);
+            this.highestTextBox.Location = new System.Drawing.Point(270, 370);
             this.highestTextBox.Name = "highestTextBox";
-            this.highestTextBox.Size = new System.Drawing.Size(271, 25);
+            this.highestTextBox.Size = new System.Drawing.Size(179, 25);
             this.highestTextBox.TabIndex = 10;
+            this.highestTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lowestTextBox
             // 
-            this.lowestTextBox.Location = new System.Drawing.Point(178, 410);
+            this.lowestTextBox.Location = new System.Drawing.Point(270, 410);
             this.lowestTextBox.Name = "lowestTextBox";
-            this.lowestTextBox.Size = new System.Drawing.Size(271, 25);
+            this.lowestTextBox.Size = new System.Drawing.Size(179, 25);
             this.lowestTextBox.TabIndex = 11;
+            this.lowestTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // MainForm
             // 

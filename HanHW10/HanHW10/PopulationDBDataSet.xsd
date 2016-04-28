@@ -63,13 +63,49 @@ FROM            City</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="PopulationDBConnectionString (Settings)" DbObjectName="dbo.City" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="MaxQuery" GetMethodModifier="Public" GetMethodName="MaxQuery" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="MaxQuery" UserSourceName="MaxQuery">
+              <DbSource ConnectionRef="PopulationDBConnectionString (Settings)" DbObjectName="dbo.City" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="MaxCityQuery" Modifier="Public" Name="MaxCityQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="MaxCityQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        City, Population
+                    <CommandText>SELECT        City
 FROM            City
 WHERE        (Population IN
                              (SELECT        MAX(Population) AS Expr1
+                               FROM            City AS City_1))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PopulationDBConnectionString (Settings)" DbObjectName="dbo.City" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="MaxQuery" Modifier="Public" Name="MaxQuery" QueryType="Scalar" ScalarCallRetval="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="MaxQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Population
+FROM            City
+WHERE        (Population IN
+                             (SELECT        MAX(Population) AS Expr1
+                               FROM            City AS City_1))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PopulationDBConnectionString (Settings)" DbObjectName="dbo.City" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="MinCityQuery" Modifier="Public" Name="MinCityQuery" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="MinCityQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        City
+FROM            City
+WHERE        (Population IN
+                             (SELECT        MIN(Population) AS Expr1
+                               FROM            City AS City_1))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PopulationDBConnectionString (Settings)" DbObjectName="dbo.City" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="MinQuery" Modifier="Public" Name="MinQuery" QueryType="Scalar" ScalarCallRetval="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="MinQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Population
+FROM            City
+WHERE        (Population IN
+                             (SELECT        MIN(Population) AS Expr1
                                FROM            City AS City_1))</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -94,7 +130,7 @@ FROM            City</CommandText>
   <xs:element name="PopulationDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PopulationDBDataSet" msprop:Generator_UserDSName="PopulationDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="City" msprop:Generator_TableClassName="CityDataTable" msprop:Generator_TableVarName="tableCity" msprop:Generator_TablePropName="City" msprop:Generator_RowDeletingName="CityRowDeleting" msprop:Generator_RowChangingName="CityRowChanging" msprop:Generator_RowEvHandlerName="CityRowChangeEventHandler" msprop:Generator_RowDeletedName="CityRowDeleted" msprop:Generator_UserTableName="City" msprop:Generator_RowChangedName="CityRowChanged" msprop:Generator_RowEvArgName="CityRowChangeEvent" msprop:Generator_RowClassName="CityRow">
+        <xs:element name="City" msprop:Generator_TableClassName="CityDataTable" msprop:Generator_TableVarName="tableCity" msprop:Generator_RowChangedName="CityRowChanged" msprop:Generator_TablePropName="City" msprop:Generator_RowDeletingName="CityRowDeleting" msprop:Generator_RowChangingName="CityRowChanging" msprop:Generator_RowEvHandlerName="CityRowChangeEventHandler" msprop:Generator_RowDeletedName="CityRowDeleted" msprop:Generator_RowClassName="CityRow" msprop:Generator_UserTableName="City" msprop:Generator_RowEvArgName="CityRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City">

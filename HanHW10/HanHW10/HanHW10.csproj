@@ -74,6 +74,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopulationDBDataSet.cs">
+      <DependentUpon>PopulationDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PopulationDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
