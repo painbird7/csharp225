@@ -48,7 +48,7 @@ namespace HanHW10
             ReadData();
         }
 
-        private void ReadData()
+        public void ReadData()
         {
             string query = "Select * From City";
 
