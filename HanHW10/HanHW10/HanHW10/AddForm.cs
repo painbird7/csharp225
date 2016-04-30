@@ -12,25 +12,24 @@ namespace HanHW10
 {
     public partial class AddForm : Form
     {
+        // Create table adpater and mainform objects.
+        PopulationDBDataSetTableAdapters.CityTableAdapter cityTableAdapter = new PopulationDBDataSetTableAdapters.CityTableAdapter();
+        MainForm mainForm = new MainForm();
+
         public AddForm()
         {
             InitializeComponent();
         }
-
-        private void AddForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void addFormExitButton_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
-            mainForm.ReadData();
+            // Close the form.
             this.Close();
         }
 
         private void addFormClearButton_Click(object sender, EventArgs e)
         {
+            // Clear text boxes.
             cityTextBox.Clear();
             populationTextBox.Clear();
         }
@@ -49,16 +48,19 @@ namespace HanHW10
                 DialogResult saveResult = MessageBox.Show("Do you want to save the entry?", "Save Confirmation", MessageBoxButtons.YesNo);
                 if (saveResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Entry has been saved.");
-
-
-                    // Clear text boxes.
-                    cityTextBox.Clear();
-                    populationTextBox.Clear();
-                }
-                else if (saveResult == DialogResult.No)
-                {
-                    MessageBox.Show("Entry is not saved.");
+                    int beforeCount = mainForm.CountRecord(); // Get count prior update
+                    this.cityTableAdapter.InsertQuery(cityNew, populationNew); // Launch query.
+                    int afterCount = mainForm.CountRecord(); // Get count after update
+                    if (afterCount > beforeCount) 
+                    {
+                        MessageBox.Show("New entry has been saved.");
+                        cityTextBox.Clear();
+                        populationTextBox.Clear();
+                    }
+                    else if (afterCount == beforeCount)
+                    {
+                        MessageBox.Show("New entry was not saved.");
+                    }
                 }
             }
             catch (Exception ex)

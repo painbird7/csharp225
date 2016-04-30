@@ -32,8 +32,8 @@
             this.mainDeleteButton = new System.Windows.Forms.Button();
             this.mainExitButton = new System.Windows.Forms.Button();
             this.listView = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cityColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.popColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +42,7 @@
             this.averageTextBox = new System.Windows.Forms.TextBox();
             this.highestTextBox = new System.Windows.Forms.TextBox();
             this.lowestTextBox = new System.Windows.Forms.TextBox();
+            this.mainEditButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainAddButton
@@ -57,13 +58,14 @@
             // 
             // mainDeleteButton
             // 
-            this.mainDeleteButton.Location = new System.Drawing.Point(192, 473);
+            this.mainDeleteButton.Location = new System.Drawing.Point(249, 473);
             this.mainDeleteButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.mainDeleteButton.Name = "mainDeleteButton";
             this.mainDeleteButton.Size = new System.Drawing.Size(87, 30);
             this.mainDeleteButton.TabIndex = 1;
             this.mainDeleteButton.Text = "Delete";
             this.mainDeleteButton.UseVisualStyleBackColor = true;
+            this.mainDeleteButton.Click += new System.EventHandler(this.mainDeleteButton_Click);
             // 
             // mainExitButton
             // 
@@ -78,25 +80,27 @@
             // 
             // listView
             // 
+            this.listView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
+            this.cityColumn,
+            this.popColumn});
             this.listView.Location = new System.Drawing.Point(23, 25);
             this.listView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView.Name = "listView";
             this.listView.Size = new System.Drawing.Size(426, 235);
+            this.listView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView.TabIndex = 3;
             this.listView.UseCompatibleStateImageBehavior = false;
             // 
-            // columnHeader1
+            // cityColumn
             // 
-            this.columnHeader1.Text = "City";
-            this.columnHeader1.Width = 200;
+            this.cityColumn.Text = "City";
+            this.cityColumn.Width = 200;
             // 
-            // columnHeader2
+            // popColumn
             // 
-            this.columnHeader2.Text = "Population";
-            this.columnHeader2.Width = 200;
+            this.popColumn.Text = "Population";
+            this.popColumn.Width = 200;
             // 
             // label1
             // 
@@ -166,11 +170,22 @@
             this.lowestTextBox.TabIndex = 11;
             this.lowestTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // mainEditButton
+            // 
+            this.mainEditButton.Location = new System.Drawing.Point(138, 473);
+            this.mainEditButton.Name = "mainEditButton";
+            this.mainEditButton.Size = new System.Drawing.Size(87, 30);
+            this.mainEditButton.TabIndex = 12;
+            this.mainEditButton.Text = "Edit";
+            this.mainEditButton.UseVisualStyleBackColor = true;
+            this.mainEditButton.Click += new System.EventHandler(this.mainEditButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 528);
+            this.Controls.Add(this.mainEditButton);
             this.Controls.Add(this.lowestTextBox);
             this.Controls.Add(this.highestTextBox);
             this.Controls.Add(this.averageTextBox);
@@ -200,8 +215,8 @@
         private System.Windows.Forms.Button mainDeleteButton;
         private System.Windows.Forms.Button mainExitButton;
         private System.Windows.Forms.ListView listView;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader cityColumn;
+        private System.Windows.Forms.ColumnHeader popColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -210,6 +225,7 @@
         private System.Windows.Forms.TextBox averageTextBox;
         private System.Windows.Forms.TextBox highestTextBox;
         private System.Windows.Forms.TextBox lowestTextBox;
+        private System.Windows.Forms.Button mainEditButton;
     }
 }
 
